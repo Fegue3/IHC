@@ -20,7 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 import mindspace.model.EmotionEntry;
-
+import mindspace.model.EmotionManager;
 /**
  * FXML Controller class
  *
@@ -90,10 +90,6 @@ public class RegisterController implements Initializable {
             animateIcon(imgFrustrado);
             updateEmotionStyle("Frustrado");
         }
-
-        updateEmotionStyle(selectedEmotion);
-        selectedEmotionLabel.setText("Selecionado: " + selectedEmotion);
-        emotionDetailsBox.setVisible(true);
     }
 
 private void animateIcon(ImageView icon) {
@@ -142,6 +138,7 @@ private void animateIcon(ImageView icon) {
 
         // Criar e imprimir registo
         EmotionEntry entry = new EmotionEntry(LocalDate.now(), selectedEmotion, note);
+        EmotionManager.guardarRegisto(entry);
         System.out.println("Guardado: " + entry.getEmotion() + " - " + entry.getNote());
 
         // Mostrar alerta

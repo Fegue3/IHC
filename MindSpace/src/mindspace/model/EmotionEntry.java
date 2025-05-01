@@ -33,4 +33,9 @@ public class EmotionEntry {
     public String getNote() {
         return note;
     }
+    
+     @Override
+    public String toString() {
+        return "Data: " + date + "\nEmoção: " + emotion + "\nNota: " + note;
+    }
 }
