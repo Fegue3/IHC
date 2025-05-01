@@ -8,13 +8,16 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
+import java.io.File;
 
 public class EmotionManager {
 
-    private static final String FILE_PATH = "registos.txt";
+    private static final String FILE_PATH = "data/registos.txt";
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public static void guardarRegisto(EmotionEntry entry) {
+        File pasta = new File("data");
+        if (!pasta.exists()) pasta.mkdirs();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write("Data: " + entry.getDate().format(formatter));
             writer.newLine();
