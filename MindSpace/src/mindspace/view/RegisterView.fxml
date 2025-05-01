@@ -12,140 +12,163 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="626.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="rootPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="626.0" style="-fx-background-color: #EFF7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.RegisterController">
    <children>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="494.0" prefWidth="626.0">
+      <VBox fx:id="emotionDetailsBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="494.0" prefWidth="626.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="602.0" text="Como te sentes hoje?">
+            <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="66.0" prefWidth="602.0" text="Como te sentes hoje?" textFill="#333333" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="System Bold" size="45.0" />
                </font>
             </Label>
-            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="155.0" prefWidth="606.0" vbarPolicy="NEVER">
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="155.0" prefWidth="606.0" style="parent; -fx-padding: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                <content>
-                  <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="228.0" prefWidth="598.0" spacing="5.0">
+                  <HBox fx:id="emotionImagesDetails" alignment="CENTER" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="228.0" prefWidth="598.0" spacing="5.0" style="-fx-background-color: #EFF7FB; -fx-border-color: transparent; -fx-border-width: 0; -fx-padding: 0; -fx-background-insets: 0; -fx-border-insets: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;">
                      <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgVeryHappy" fitHeight="80.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgRadiante" fitHeight="80.0" fitWidth="94.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/entusiasmado.png" />
+                                    <Image url="@../recourses/entusiasmado.png" />
                                  </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
                               </ImageView>
-                              <Label disable="true" text="Radiante">
+                              <Label fx:id="labelRadiante" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="81.0" text="Radiante" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgHappy" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgFeliz" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/feliz.png" />
+                                    <Image url="@../recourses/feliz.png" />
                                  </image>
                               </ImageView>
-                              <Label disable="true" text="Feliz">
+                              <Label fx:id="labelFeliz" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Feliz" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgNeutral" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgTranquilo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/neutro.png" />
+                                    <Image url="@../recourses/neutro.png" />
                                  </image>
                               </ImageView>
-                              <Label disable="true" text="Tranquilo">
+                              <Label fx:id="labelTranquilo" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Tranquilo" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgStunned" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgConfuso" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/confuso.png" />
+                                    <Image url="@../recourses/confuso.png" />
                                  </image>
                               </ImageView>
-                              <Label disable="true" text="Confuso">
+                              <Label fx:id="labelConfuso" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Confuso" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgSad" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgEmBaixo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/triste.png" />
+                                    <Image url="@../recourses/triste.png" />
                                  </image>
                               </ImageView>
-                              <Label disable="true" text="Em baixo">
+                              <Label fx:id="labelEmBaixo" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Em baixo" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgCrying" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgSensivel" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/choroso.png" />
+                                    <Image url="@../recourses/choroso.png" />
                                  </image>
                               </ImageView>
-                              <Label disable="true" text="Sensível">
+                              <Label fx:id="labelSensivel" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Sensível" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgAngry" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="imgFrustrado" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../../../../../../../Ambiente%20de%20Trabalho/zangado.png" />
+                                    <Image url="@../recourses/zangado.png" />
                                  </image>
                               </ImageView>
-                              <Label disable="true" text="Frustrado">
+                              <Label fx:id="labelFustrado" alignment="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Frustrado" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
                            </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
                         </VBox>
                      </children>
                   </HBox>
                </content>
             </ScrollPane>
-            <Label fx:id="lblSelectedEmotion" alignment="CENTER" contentDisplay="CENTER" disable="true" prefHeight="20.0" prefWidth="617.0" text="Selecionado!">
+            <Label fx:id="selectedEmotionLabel" alignment="CENTER" contentDisplay="CENTER" disable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="617.0" text="Selecionado!" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <VBox alignment="TOP_CENTER" prefHeight="232.0" prefWidth="600.0">
+            <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="232.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="600.0" text="O que te fez sentir assim hoje?" VBox.vgrow="ALWAYS">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="600.0" text="O que te fez sentir assim hoje?" textFill="#555555" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="87.0" prefWidth="600.0" promptText="Escreve algo sobre o teu dia, se te apetecer.">
+                  <TextArea fx:id="noteArea" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="87.0" prefWidth="600.0" promptText="Escreve algo sobre o teu dia, se te apetecer." VBox.vgrow="ALWAYS">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </TextArea>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Guardar este momento" VBox.vgrow="ALWAYS">
+                  <Button fx:id="submitButton" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSubmit" style="-fx-background-color: #A2D5F2;" text="Guardar este momento" textFill="WHITE" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
