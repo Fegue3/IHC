@@ -18,6 +18,7 @@ public class EmotionManager {
     public static void guardarRegisto(EmotionEntry entry) {
         File pasta = new File("data");
         if (!pasta.exists()) pasta.mkdirs();
+        
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write("Data: " + entry.getDate().format(formatter));
             writer.newLine();
