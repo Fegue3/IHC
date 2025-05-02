@@ -55,6 +55,16 @@ public class RegisterController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        submitButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;");
+
+        // Hover
+        submitButton.setOnMouseEntered(e ->
+            submitButton.setStyle("-fx-background-color: #4e8fb5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;")
+        );
+
+        submitButton.setOnMouseExited(e ->
+            submitButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;")
+        );
     }
 
     @FXML
