@@ -21,6 +21,7 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 import mindspace.model.EmotionEntry;
 import mindspace.model.EmotionManager;
+
 /**
  * FXML Controller class
  *
@@ -53,6 +54,7 @@ public class RegisterController implements Initializable {
     
     private Map<ImageView, TranslateTransition> activeAnimations = new HashMap<>();
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         submitButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;");
@@ -66,7 +68,7 @@ public class RegisterController implements Initializable {
             submitButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;")
         );
     }
-
+    
     @FXML
     private void handleEmotionHover(MouseEvent event) {
         Object source = event.getSource();
@@ -145,9 +147,10 @@ private void animateIcon(ImageView icon) {
             showAlert("Por favor, escolhe uma emoção primeiro.");
             return;
         }
-
+        int points = EmotionManager.getPoints(selectedEmotion);
+        
         // Criar e imprimir registo
-        EmotionEntry entry = new EmotionEntry(LocalDate.now(), selectedEmotion, note);
+        EmotionEntry entry = new EmotionEntry(LocalDate.now(), selectedEmotion, note, points);
         EmotionManager.guardarRegisto(entry);
         System.out.println("Guardado: " + entry.getEmotion() + " - " + entry.getNote());
 
@@ -180,6 +183,9 @@ private void animateIcon(ImageView icon) {
         } else if (source == imgFrustrado) {
             labelFustrado.setVisible(false);
         }
+        
+        rootPane.setStyle("-fx-background-color: #EFF7FB;");
+        emotionImagesDetails.setStyle("-fx-background-color: #EFF7FB");
     }
     
     @FXML

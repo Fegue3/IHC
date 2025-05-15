@@ -14,7 +14,20 @@ public class EmotionManager {
 
     private static final String FILE_PATH = "data/registos.txt";
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+    
+    public static int getPoints(String emotion) {
+        switch (emotion) {
+            case "Radiante": return 10;
+            case "Feliz": return 8;
+            case "Tranquilo": return 6;
+            case "Confuso": return 0;
+            case "Em baixo": return -6;
+            case "Sensível": return -8;
+            case "Frustrado": return -10;
+            default: return 0;
+        }
+    }
+    
     public static void guardarRegisto(EmotionEntry entry) {
         File pasta = new File("data");
         if (!pasta.exists()) pasta.mkdirs();

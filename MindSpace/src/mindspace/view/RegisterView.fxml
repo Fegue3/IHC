@@ -27,83 +27,12 @@
                      <children>
                         <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgRadiante" fitHeight="80.0" fitWidth="94.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                              <ImageView fx:id="imgFrustrado" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../recourses/entusiasmado.png" />
-                                 </image>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </ImageView>
-                              <Label fx:id="labelRadiante" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="81.0" text="Radiante" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
-                           <children>
-                              <ImageView fx:id="imgFeliz" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../recourses/feliz.png" />
+                                    <Image url="@../recourses/zangado.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="labelFeliz" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Feliz" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
-                           <children>
-                              <ImageView fx:id="imgTranquilo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../recourses/neutro.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="labelTranquilo" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Tranquilo" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
-                           <children>
-                              <ImageView fx:id="imgConfuso" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../recourses/confuso.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="labelConfuso" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Confuso" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
-                           <children>
-                              <ImageView fx:id="imgEmBaixo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-                                 <image>
-                                    <Image url="@../recourses/triste.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="labelEmBaixo" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Em baixo" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
+                              <Label fx:id="labelFustrado" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Frustrado" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -132,12 +61,83 @@
                         </VBox>
                         <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
                            <children>
-                              <ImageView fx:id="imgFrustrado" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                              <ImageView fx:id="imgEmBaixo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                                  <image>
-                                    <Image url="@../recourses/zangado.png" />
+                                    <Image url="@../recourses/triste.png" />
                                  </image>
                               </ImageView>
-                              <Label fx:id="labelFustrado" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Frustrado" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
+                              <Label fx:id="labelEmBaixo" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Em baixo" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fx:id="imgConfuso" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../recourses/confuso.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="labelConfuso" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Confuso" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fx:id="imgTranquilo" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../recourses/neutro.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="labelTranquilo" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Tranquilo" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fx:id="imgFeliz" fitHeight="80.0" fitWidth="80.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../recourses/feliz.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="labelFeliz" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Feliz" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: transparent;" HBox.hgrow="ALWAYS">
+                           <children>
+                              <ImageView fx:id="imgRadiante" fitHeight="80.0" fitWidth="94.0" onMouseClicked="#handleEmotionClick" onMouseEntered="#handleEmotionHover" onMouseExited="#handleEmotionExit" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                 <image>
+                                    <Image url="@../recourses/entusiasmado.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label fx:id="labelRadiante" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="81.0" text="Radiante" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

@@ -18,3 +18,8 @@ Data: 05/05/2025
 Emoção: Radiante
 Nota: (sem comentário)
 ---------------------------
+Data: 15/05/2025
+Emoção: Radiante
+Nota: B
+Pontos: 10
+---------------------------
