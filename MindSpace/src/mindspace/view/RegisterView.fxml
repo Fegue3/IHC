@@ -151,6 +151,11 @@
                   </HBox>
                </content>
             </ScrollPane>
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="641.0" text="Clique num dos ícones para selecionar como se sente!" textFill="#555555">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <Label fx:id="selectedEmotionLabel" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="617.0" text="Selecionado!" textFill="#333333" visible="false" VBox.vgrow="ALWAYS">
                <font>
                   <Font size="18.0" />
