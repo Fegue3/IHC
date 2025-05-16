@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #e3def5;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="mindspace.controller.HistoryController">
+    <children>
+        <HBox spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <Spinner fx:id="spinnerAno" prefWidth="100.0" />
+                <ComboBox fx:id="comboMes" prefWidth="150.0" promptText="Novembro" />
+                <Button fx:id="btnTimeMachine" style="-fx-font-weight: bold; -fx-font-size: 14;" text="Dia Atual" />
+            </children>
+            <padding>
+                <Insets bottom="5" top="5" />
+            </padding>
+        </HBox>
+
+        <GridPane fx:id="gridCalendario" hgap="1.0" vgap="1.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+            <children>
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Seg" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Ter" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Qua" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Qui" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Sex" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Sab" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #A2D5F2; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Dom" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+            </children>
+
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+                <ColumnConstraints halignment="CENTER" percentWidth="14.2857" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="12.5" />
+                <RowConstraints percentHeight="14.5" />
+                <RowConstraints percentHeight="14.5" />
+                <RowConstraints percentHeight="14.5" />
+                <RowConstraints percentHeight="14.5" />
+                <RowConstraints percentHeight="14.5" />
+                <RowConstraints percentHeight="14.5" />
+            </rowConstraints>
+        </GridPane>
+    </children>
+</AnchorPane>
