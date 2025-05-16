@@ -19,7 +19,7 @@ public class MindSpace extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("view/RegisterView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/History.fxml"));
         
         Scene scene = new Scene(root);
         stage.setTitle("MindSpace");
