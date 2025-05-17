@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="323.0" style="-fx-background-color: EFF7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="323.0" style="-fx-background-color: EFF7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="mindspace.controller.MainMenuController">
    <bottom>
       <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="425.0" style="-fx-background-color: D7F3F1;" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgCalendario" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#abrirCalendario" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recourses/Calendário.png" />
                      </image>
@@ -31,7 +31,7 @@
             </VBox>
             <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgAutocuidado" fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recourses/Autocuidados.png" />
                      </image>
@@ -45,7 +45,7 @@
             </VBox>
             <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <ImageView fitHeight="65.0" fitWidth="65.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgEstatisticas" fitHeight="65.0" fitWidth="65.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recourses/Estatística.png" />
                      </image>
@@ -63,7 +63,7 @@
    <center>
       <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="296.0" prefWidth="423.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="119.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgRegistar" fitHeight="119.0" fitWidth="125.0" onMouseClicked="#abrirRegisto" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recourses/greenplus.png" />
                </image>
