@@ -23,3 +23,19 @@ Emoção: Radiante
 Nota: B
 Pontos: 10
 ---------------------------
+Data: 17/05/2025
+Emoção: Frustrado
+Nota: (sem comentário)
+---------------------------
+Data: 17/05/2025
+Emoção: Tranquilo
+Nota: ABC
+---------------------------
+Data: 17/05/2025
+Emoção: Radiante
+Nota: AB
+---------------------------
+Data: 17/05/2025
+Emoção: Radiante
+Nota: (sem comentário)
+---------------------------
