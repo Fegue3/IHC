@@ -61,7 +61,7 @@
       </HBox>
    </bottom>
    <center>
-      <VBox fx:id="btnRegistar" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="296.0" prefWidth="423.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="btnRegistar" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="296.0" prefWidth="423.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="imgRegistar" fitHeight="119.0" fitWidth="125.0" onMouseClicked="#abrirRegisto" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -77,6 +77,9 @@
                </font>
             </Label>
          </children>
+         <BorderPane.margin>
+            <Insets bottom="50.0" />
+         </BorderPane.margin>
       </VBox>
    </center>
    <top>
