@@ -4,6 +4,7 @@
  */
 package mindspace.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -11,13 +12,17 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import mindspace.model.EmotionEntry;
 import mindspace.model.EmotionManager;
@@ -161,8 +166,16 @@ private void animateIcon(ImageView icon) {
         alert.setContentText("O teu registo foi guardado com sucesso. Obrigado por partilhares 💙");
         alert.showAndWait();
 
-        // Fechar a aplicação
-        javafx.application.Platform.exit();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/MainMenu.fxml"));
+            Parent root = loader.load();
+
+            // Usa qualquer nó da tua interface atual (ex: o botão "Guardar" ou o TextArea)
+            Stage stage = (Stage) noteArea.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     public void handleEmotionExit(MouseEvent event) {
