@@ -4,6 +4,7 @@
  */
 package mindspace.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.Month;
@@ -12,10 +13,14 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 public class HistoryController implements Initializable {
 
@@ -23,10 +28,27 @@ public class HistoryController implements Initializable {
     @FXML private ComboBox<String> comboMes;
     @FXML private Button btnTimeMachine;
     @FXML private GridPane gridCalendario;
+    @FXML private Button voltarButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         spinnerAno.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1900, 2100, LocalDate.now().getYear()));
+        
+        voltarButton.setOnMouseEntered(e ->
+            voltarButton.setStyle("-fx-background-color: #4e8fb5; -fx-text-fill: white;")
+        );
+
+        voltarButton.setOnMouseExited(e ->
+            voltarButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white;")
+        );
+        
+        btnTimeMachine.setOnMouseEntered(e ->
+            btnTimeMachine.setStyle("-fx-background-color: #4e8fb5; -fx-text-fill: white;")
+        );
+
+        btnTimeMachine.setOnMouseExited(e ->
+            btnTimeMachine.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white;")
+        );
         
         for (Month month : Month.values()) {
             comboMes.getItems().add(month.getDisplayName(TextStyle.FULL, new Locale("pt", "PT")));
@@ -45,7 +67,19 @@ public class HistoryController implements Initializable {
 
         atualizarCalendario();
     }
-
+    
+    @FXML
+    private void voltarParaMenuPrincipal() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/MainMenu.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) voltarButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     private void atualizarCalendario() {
         gridCalendario.getChildren().removeIf(node -> GridPane.getRowIndex(node) != null && GridPane.getRowIndex(node) > 0);
 
