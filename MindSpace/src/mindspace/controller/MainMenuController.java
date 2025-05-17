@@ -12,7 +12,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -22,12 +26,12 @@ import javafx.stage.Stage;
  */
 
 public class MainMenuController implements Initializable {
-    @FXML
-    private ImageView imgRegistar;
-
-    @FXML
-    private ImageView imgCalendario;
-    
+    @FXML private ImageView imgRegistar;
+    @FXML private ImageView imgCalendario;
+    @FXML private ImageView imgAutocuidado;
+    @FXML private ImageView imgEstatisticas;
+    @FXML private VBox btnRegistar;
+    @FXML private Label labelRegistar;
     
     @FXML
     private void abrirRegisto() {
@@ -49,10 +53,42 @@ public class MainMenuController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    private void aplicarHover(ImageView img) {
+    img.setOnMouseEntered(e -> {
+        img.setScaleX(1.1);
+        img.setScaleY(1.1);
+        img.setOpacity(1.0);
+    });
+    img.setOnMouseExited(e -> {
+        img.setScaleX(1.0);
+        img.setScaleY(1.0);
+        img.setOpacity(0.85);
+        img.setEffect(null);
+    });
+}
+    private void aplicarHoverBotaoAdicionar() {
+    imgRegistar.setOnMouseEntered(e -> {
+        imgRegistar.setScaleX(1.1);
+        imgRegistar.setScaleY(1.1);
+        imgRegistar.setOpacity(1.0);
+        labelRegistar.setVisible(true); // ← mostrar label
+    });
 
+    imgRegistar.setOnMouseExited(e -> {
+        imgRegistar.setScaleX(1.0);
+        imgRegistar.setScaleY(1.0);
+        imgRegistar.setOpacity(0.9);
+        imgRegistar.setEffect(null);
+        labelRegistar.setVisible(false); // ← esconder label
+    });
+}
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        aplicarHover(imgCalendario);
+        aplicarHover(imgAutocuidado);
+        aplicarHover(imgEstatisticas);
+        aplicarHoverBotaoAdicionar();
     }    
     
     
