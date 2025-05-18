@@ -25,7 +25,7 @@
                </HBox.margin>
             </Button>
                 <Spinner fx:id="spinnerAno" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" style="-fx-background-color: #A2D5F2; -fx-background-radius: 10px;" />
-                <ComboBox fx:id="comboMes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Novembro" style="-fx-background-color: #A2D5F2; -fx-background-radius: 10px;" />
+                <ComboBox fx:id="comboMes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Novembro" style="-fx-background-color: #A2D5F2; -fx-background-radius: 10px; -fx-text-fill: white;" />
                 <Button fx:id="btnTimeMachine" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: #A2D5F2; -fx-background-radius: 10px;" text="Dia Atual" textFill="WHITE">
                <font>
                   <Font size="14.0" />

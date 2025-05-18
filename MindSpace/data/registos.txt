@@ -91,3 +91,15 @@ Data: 17/05/2025
 Emoção: Radiante
 Nota: (sem comentário)
 ---------------------------
+Data: 17/05/2025
+Emoção: Sensível
+Nota: (sem comentário)
+---------------------------
+Data: 18/05/2025
+Emoção: Radiante
+Nota: (sem comentário)
+---------------------------
+Data: 18/05/2025
+Emoção: Confuso
+Nota: (sem comentário)
+---------------------------
