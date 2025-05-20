@@ -42,6 +42,15 @@ public class MainMenuController implements Initializable {
     private void abrirCalendario() {
         trocarCena("History.fxml");
     }
+    @FXML 
+    private void abrirStats(){
+        trocarCena("Stats.fxml");
+    }
+    
+    @FXML 
+    private void abrirSaude(){
+        trocarCena("Saude.fxml");
+    }
     
     private void trocarCena(String nomeFxml) {
         try {
