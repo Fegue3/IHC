@@ -117,3 +117,18 @@ Emoção: Frustrado
 Nota: (sem comentário)
 Pontos: -10
 ---------------------------
+Data: 20/05/2025
+Emoção: Confuso
+Nota: (sem comentário)
+Pontos: 0
+---------------------------
+Data: 20/05/2025
+Emoção: Frustrado
+Nota: (sem comentário)
+Pontos: -10
+---------------------------
+Data: 20/05/2025
+Emoção: Radiante
+Nota: (sem comentário)
+Pontos: 10
+---------------------------

@@ -87,7 +87,7 @@ public class StatsController implements Initializable {
     }
     
     private void atualizarEstatisticas() {
-        String[] nomes = {"Radiante", "Satisfeito", "Grato", "Feliz", "Em baixo", "Frustrado", "Ansioso"};
+        String[] nomes = {"Radiante", "Feliz", "Tranquilo", "Confuso", "Em baixo", "Sensível", "Frustrado"};
         int[] contadores = new int[nomes.length];
         int totalEmocoes = 0;
         int somaPontos = 0;
