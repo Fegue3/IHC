@@ -39,6 +39,8 @@ public class EmotionManager {
             writer.newLine();
             writer.write("Nota: " + (entry.getNote().isEmpty() ? "(sem comentário)" : entry.getNote()));
             writer.newLine();
+            writer.write("Pontos: " + (entry.getPoints()));
+            writer.newLine();
             writer.write("---------------------------");
             writer.newLine();
             System.out.println("Registo guardado com sucesso em " + FILE_PATH);
