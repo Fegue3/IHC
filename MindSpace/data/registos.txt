@@ -1,105 +1,119 @@
-Data: 01/05/2025
-Emoção: Frustrado
-Nota: B
----------------------------
-Data: 01/05/2025
+Data: 10/05/2025
 Emoção: Feliz
-Nota: viagem com o meu momo (e infelizmente 4 macacos hahaha) a salamanca
+Nota: A
+Pontos: 9
+Comentário: Dia muito positivo, consegui atingir os meus objetivos.
 ---------------------------
-Data: 02/05/2025
-Emoção: Confuso
-Nota: (sem comentário)
+Data: 10/05/2025
+Emoção: Tranquilo
+Nota: B
+Pontos: 6
+Comentário: Dia calmo, sem grandes preocupações.
 ---------------------------
-Data: 02/05/2025
-Emoção: Em baixo
-Nota: Fortnite
----------------------------
-Data: 05/05/2025
+Data: 11/05/2025
 Emoção: Radiante
-Nota: (sem comentário)
+Nota: A
+Pontos: 12
+Comentário: Estive com amigos e diverti-me imenso.
+---------------------------
+Data: 11/05/2025
+Emoção: Sensível
+Nota: C
+Pontos: 5
+Comentário: Pequenas coisas afetaram-me mais do que o normal.
+---------------------------
+Data: 12/05/2025
+Emoção: Frustrado
+Nota: C
+Pontos: 4
+Comentário: Tentei ser produtivo mas tive muitas distrações.
+---------------------------
+Data: 12/05/2025
+Emoção: Confuso
+Nota: B
+Pontos: 6
+Comentário: Senti-me perdido quanto ao que fazer durante o dia.
+---------------------------
+Data: 13/05/2025
+Emoção: Em baixo
+Nota: D
+Pontos: 3
+Comentário: Sem energia nem vontade de fazer nada.
+---------------------------
+Data: 13/05/2025
+Emoção: Radiante
+Nota: A
+Pontos: 11
+Comentário: Recebi boas notícias e senti-me muito motivado.
+---------------------------
+Data: 14/05/2025
+Emoção: Feliz
+Nota: A
+Pontos: 10
+Comentário: Estive a trabalhar num projeto que me entusiasma.
 ---------------------------
 Data: 15/05/2025
-Emoção: Radiante
+Emoção: Tranquilo
 Nota: B
+Pontos: 8
+Comentário: Dia sereno e equilibrado.
+---------------------------
+Data: 15/05/2025
+Emoção: Frustrado
+Nota: C
+Pontos: 5
+Comentário: Algumas tarefas não correram como esperado.
+---------------------------
+Data: 16/05/2025
+Emoção: Em baixo
+Nota: C
+Pontos: 4
+Comentário: Acordei cansado e sem muita disposição.
+---------------------------
+Data: 16/05/2025
+Emoção: Sensível
+Nota: B
+Pontos: 6
+Comentário: Reagi emocionalmente a pequenas situações.
+---------------------------
+Data: 17/05/2025
+Emoção: Confuso
+Nota: C
+Pontos: 5
+Comentário: Tive dificuldade em tomar decisões simples.
+---------------------------
+Data: 20/05/2025
+Emoção: Frustrado
+Nota: B
+Pontos: -10
+---------------------------
+Data: 20/05/2025
+Emoção: Confuso
+Nota: l
+Pontos: 0
+---------------------------
+Data: 20/05/2025
+Emoção: Feliz
+Nota: b
+Pontos: 8
+---------------------------
+Data: 20/05/2025
+Emoção: Confuso
+Nota: (sem comentário)
+Pontos: 0
+---------------------------
+Data: 20/05/2025
+Emoção: Sensível
+Nota: (sem comentário)
+Pontos: -8
+---------------------------
+Data: 20/05/2025
+Emoção: Radiante
+Nota: (sem comentário)
 Pontos: 10
 ---------------------------
-Data: 17/05/2025
+Data: 20/05/2025
 Emoção: Frustrado
 Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Tranquilo
-Nota: ABC
----------------------------
-Data: 17/05/2025
-Emoção: Radiante
-Nota: AB
----------------------------
-Data: 17/05/2025
-Emoção: Radiante
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Confuso
-Nota: B
----------------------------
-Data: 17/05/2025
-Emoção: Confuso
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Confuso
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Feliz
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Sensível
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Tranquilo
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Radiante
-Nota: (sem comentário)
----------------------------
-Data: 17/05/2025
-Emoção: Sensível
-Nota: (sem comentário)
----------------------------
-Data: 18/05/2025
-Emoção: Radiante
-Nota: (sem comentário)
----------------------------
-Data: 18/05/2025
-Emoção: Confuso
-Nota: (sem comentário)
+Pontos: -10
 ---------------------------
