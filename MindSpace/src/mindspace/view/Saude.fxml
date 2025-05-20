@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600" prefWidth="400" style="-fx-background-color: #EFF7FB;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+    
+    <!-- Botão Voltar -->
+    <Button fx:id="btnVoltar" layoutX="20" layoutY="540" prefHeight="30" prefWidth="80" style="-fx-background-color: #a3d9f7; -fx-text-fill: white; -fx-font-weight: bold;" text="Voltar" />
+
+    <!-- Conteúdo Central -->
+    <VBox alignment="CENTER" layoutX="50" layoutY="100" prefWidth="300" spacing="30">
+        <StackPane prefHeight="120" prefWidth="300" style="-fx-background-color: #f1e7ff; -fx-background-radius: 10;">
+            <Text style="-fx-font-size: 18px; -fx-fill: #003f4f;" text="Dicas de Meditação" />
+        </StackPane>
+
+        <StackPane prefHeight="120" prefWidth="300" style="-fx-background-color: #f1e7ff; -fx-background-radius: 10;">
+            <Text style="-fx-font-size: 18px; -fx-fill: #003f4f;" text="Exercícios de Respiração" />
+        </StackPane>
+    </VBox>
+</AnchorPane>
