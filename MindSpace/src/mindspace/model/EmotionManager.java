@@ -17,13 +17,13 @@ public class EmotionManager {
     
     public static int getPoints(String emotion) {
         switch (emotion) {
-            case "Radiante": return 10;
-            case "Feliz": return 8;
-            case "Tranquilo": return 6;
+            case "Radiante": return 6;
+            case "Feliz": return 4;
+            case "Tranquilo": return 2;
             case "Confuso": return 0;
-            case "Em baixo": return -6;
-            case "Sensível": return -8;
-            case "Frustrado": return -10;
+            case "Em baixo": return -2;
+            case "Sensível": return -4;
+            case "Frustrado": return -6;
             default: return 0;
         }
     }
