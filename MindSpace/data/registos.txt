@@ -1,134 +1,155 @@
-Data: 10/05/2025
-Emoção: Feliz
-Nota: A
-Pontos: 9
-Comentário: Dia muito positivo, consegui atingir os meus objetivos.
----------------------------
-Data: 10/05/2025
-Emoção: Tranquilo
-Nota: B
-Pontos: 6
-Comentário: Dia calmo, sem grandes preocupações.
----------------------------
-Data: 11/05/2025
-Emoção: Radiante
-Nota: A
-Pontos: 12
-Comentário: Estive com amigos e diverti-me imenso.
----------------------------
-Data: 11/05/2025
+Data: 01/05/2025
 Emoção: Sensível
-Nota: C
-Pontos: 5
-Comentário: Pequenas coisas afetaram-me mais do que o normal.
+Nota: ansioso com exames
+Pontos: -4
 ---------------------------
-Data: 12/05/2025
-Emoção: Frustrado
-Nota: C
+Data: 02/05/2025
+Emoção: Feliz
+Nota: estresse no trabalho
 Pontos: 4
-Comentário: Tentei ser produtivo mas tive muitas distrações.
+---------------------------
+Data: 03/05/2025
+Emoção: Frustrado
+Nota: (sem comentário)
+Pontos: -6
+---------------------------
+Data: 04/05/2025
+Emoção: Feliz
+Nota: ansioso com exames
+Pontos: 4
+---------------------------
+Data: 05/05/2025
+Emoção: Tranquilo
+Nota: (sem comentário)
+Pontos: 2
+---------------------------
+Data: 06/05/2025
+Emoção: Radiante
+Nota: dia ótimo
+Pontos: 6
+---------------------------
+Data: 07/05/2025
+Emoção: Tranquilo
+Nota: (sem comentário)
+Pontos: 2
+---------------------------
+Data: 08/05/2025
+Emoção: Confuso
+Nota: (sem comentário)
+Pontos: 0
+---------------------------
+Data: 09/05/2025
+Emoção: Frustrado
+Nota: dia ótimo
+Pontos: -6
+---------------------------
+Data: 10/05/2025
+Emoção: Sensível
+Nota: dia ótimo
+Pontos: -4
+---------------------------
+Data: 11/05/2025
+Emoção: Feliz
+Nota: chateado com amigos
+Pontos: 4
 ---------------------------
 Data: 12/05/2025
-Emoção: Confuso
-Nota: B
-Pontos: 6
-Comentário: Senti-me perdido quanto ao que fazer durante o dia.
+Emoção: Tranquilo
+Nota: projetos acumulados
+Pontos: 2
 ---------------------------
 Data: 13/05/2025
 Emoção: Em baixo
-Nota: D
-Pontos: 3
-Comentário: Sem energia nem vontade de fazer nada.
----------------------------
-Data: 13/05/2025
-Emoção: Radiante
-Nota: A
-Pontos: 11
-Comentário: Recebi boas notícias e senti-me muito motivado.
+Nota: discussão em casa
+Pontos: -2
 ---------------------------
 Data: 14/05/2025
-Emoção: Feliz
-Nota: A
-Pontos: 10
-Comentário: Estive a trabalhar num projeto que me entusiasma.
+Emoção: Confuso
+Nota: dia normal
+Pontos: 0
 ---------------------------
 Data: 15/05/2025
 Emoção: Tranquilo
-Nota: B
-Pontos: 8
-Comentário: Dia sereno e equilibrado.
----------------------------
-Data: 15/05/2025
-Emoção: Frustrado
-Nota: C
-Pontos: 5
-Comentário: Algumas tarefas não correram como esperado.
+Nota: tudo correu bem
+Pontos: 2
 ---------------------------
 Data: 16/05/2025
-Emoção: Em baixo
-Nota: C
-Pontos: 4
-Comentário: Acordei cansado e sem muita disposição.
----------------------------
-Data: 16/05/2025
-Emoção: Sensível
-Nota: B
-Pontos: 6
-Comentário: Reagi emocionalmente a pequenas situações.
+Emoção: Tranquilo
+Nota: tudo correu bem
+Pontos: 2
 ---------------------------
 Data: 17/05/2025
-Emoção: Confuso
-Nota: C
-Pontos: 5
-Comentário: Tive dificuldade em tomar decisões simples.
+Emoção: Tranquilo
+Nota: dia ótimo
+Pontos: 2
 ---------------------------
-Data: 20/05/2025
-Emoção: Frustrado
-Nota: B
-Pontos: -10
----------------------------
-Data: 20/05/2025
-Emoção: Confuso
-Nota: l
-Pontos: 0
----------------------------
-Data: 20/05/2025
+Data: 18/05/2025
 Emoção: Feliz
-Nota: b
-Pontos: 8
----------------------------
-Data: 20/05/2025
-Emoção: Confuso
 Nota: (sem comentário)
-Pontos: 0
+Pontos: 4
+---------------------------
+Data: 19/05/2025
+Emoção: Feliz
+Nota: relaxante
+Pontos: 4
 ---------------------------
 Data: 20/05/2025
 Emoção: Sensível
-Nota: (sem comentário)
-Pontos: -8
+Nota: ansioso com exames
+Pontos: -4
 ---------------------------
-Data: 20/05/2025
-Emoção: Radiante
-Nota: (sem comentário)
-Pontos: 10
+Data: 21/05/2025
+Emoção: Sensível
+Nota: estresse no trabalho
+Pontos: -4
 ---------------------------
-Data: 20/05/2025
+Data: 22/05/2025
 Emoção: Frustrado
-Nota: (sem comentário)
-Pontos: -10
+Nota: dia ótimo
+Pontos: -6
 ---------------------------
-Data: 20/05/2025
+Data: 23/05/2025
 Emoção: Confuso
-Nota: (sem comentário)
+Nota: relaxante
 Pontos: 0
 ---------------------------
-Data: 20/05/2025
-Emoção: Frustrado
-Nota: (sem comentário)
-Pontos: -10
+Data: 24/05/2025
+Emoção: Sensível
+Nota: ansioso com exames
+Pontos: -4
 ---------------------------
-Data: 20/05/2025
-Emoção: Radiante
-Nota: (sem comentário)
-Pontos: 10
+Data: 25/05/2025
+Emoção: Confuso
+Nota: tudo correu bem
+Pontos: 0
+---------------------------
+Data: 26/05/2025
+Emoção: Em baixo
+Nota: discussão em casa
+Pontos: -2
+---------------------------
+Data: 27/05/2025
+Emoção: Confuso
+Nota: ansioso com exames
+Pontos: 0
+---------------------------
+Data: 28/05/2025
+Emoção: Frustrado
+Nota: ansioso com exames
+Pontos: -6
+---------------------------
+Data: 29/05/2025
+Emoção: Frustrado
+Nota: muito cansado
+Pontos: -6
+---------------------------
+Data: 30/05/2025
+Emoção: Sensível
+Nota: dia ótimo
+Pontos: -4
+---------------------------
+Data: 31/05/2025
+Emoção: Tranquilo
+Nota: estresse no trabalho
+Pontos: 2
 ---------------------------
