@@ -131,13 +131,13 @@ private void animateIcon(ImageView icon) {
         String backgroundColor = "#EFF7FB"; // Default
 
         switch (emotion) {
-            case "Radiante":  backgroundColor = "#FFF8D6"; break;
-            case "Feliz":     backgroundColor = "#DFFFE0"; break;
-            case "Tranquilo": backgroundColor = "#E3F2FD"; break;
-            case "Confuso":   backgroundColor = "#F1E6FF"; break;
-            case "Em baixo":  backgroundColor = "#ECEFF1"; break;
-            case "Sensível":  backgroundColor = "#FFE5EC"; break;
-            case "Frustrado": backgroundColor = "#FFF1E0"; break;
+            case "Radiante":  backgroundColor = "#FFF59D"; break;
+            case "Feliz":     backgroundColor = "#AEDFB0"; break;
+            case "Tranquilo": backgroundColor = "#D6F0F5"; break;
+            case "Confuso":   backgroundColor = "#FFF3CD"; break;
+            case "Em baixo":  backgroundColor = "#B0BEC5"; break;
+            case "Sensível":  backgroundColor = "#FFCAD4"; break;
+            case "Frustrado": backgroundColor = "#FFADAD"; break;
         }
 
         rootPane.setStyle("-fx-background-color: " + backgroundColor + ";");
