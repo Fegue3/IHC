@@ -62,16 +62,6 @@ public class RegisterController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        submitButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;");
-
-        // Hover
-        submitButton.setOnMouseEntered(e ->
-            submitButton.setStyle("-fx-background-color: #4e8fb5; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;")
-        );
-
-        submitButton.setOnMouseExited(e ->
-            submitButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 10px;")
-        );
     }
     
     @FXML
@@ -230,5 +220,16 @@ private void animateIcon(ImageView icon) {
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
+    }
+    
+    @FXML
+    private void hoverAzul(MouseEvent event) {
+        Button btn = (Button) event.getSource();
+        btn.setStyle("-fx-background-color: #90C3D4; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    @FXML
+    private void sairHoverAzul(MouseEvent event) {
+        Button btn = (Button) event.getSource();
+        btn.setStyle("-fx-background-color:  #A6DCEF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
 }
