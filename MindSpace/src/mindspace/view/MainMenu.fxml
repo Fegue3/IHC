@@ -13,7 +13,7 @@
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="323.0" style="-fx-background-color: EFF7FB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.MainMenuController">
    <bottom>
-      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="425.0" style="-fx-background-color: D7F3F1;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="425.0" style="-fx-background-color: #D8F5F2;" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
                <children>
@@ -22,7 +22,7 @@
                         <Image url="@../recourses/Calendário.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Calendário" textFill="#555555">
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Calendário" textFill="#37474f">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -36,7 +36,7 @@
                         <Image url="@../recourses/Autocuidados.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Saude" textFill="#555555">
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Saude" textFill="#37474f">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Image url="@../recourses/Estatística.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Estatísticas" textFill="#555555">
+                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Estatísticas" textFill="#37474f">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -85,7 +85,7 @@
    <top>
       <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="141.0" prefWidth="323.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="99.0" fitWidth="236.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="107.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recourses/Título.png" />
                </image>
