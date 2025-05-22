@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 public class StatsController implements Initializable {
 
@@ -24,7 +25,7 @@ public class StatsController implements Initializable {
     private LineChart<String, Number> graficoEvolucao;
 
     @FXML
-    private Button btnAlegria, btnTristeza, btnRaiva, voltarButton;
+    private Button btnAlegria, btnTristeza, btnRaiva, voltarButton, btnDefault;
     @FXML
     private Label labelEmocaoPrincipalTitulo, labelDiasPositivos, labelEmocaoPrincipalValor, labelDiasPositivosValor, labelMediaTitulo, labelMediaValor;
 
@@ -151,4 +152,24 @@ public class StatsController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void hoverAzul(MouseEvent event) {
+        Button btn = (Button) event.getSource();
+        btn.setStyle("-fx-background-color: #90C3D4; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    @FXML
+    private void sairHoverAzul(MouseEvent event) {
+        Button btn = (Button) event.getSource();
+        btn.setStyle("-fx-background-color:  #A6DCEF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    @FXML
+    private void hoverLavanda(MouseEvent event) {
+        ((Button) event.getSource()).setStyle("-fx-background-color: #C1A6F5; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+
+    @FXML
+    private void sairHoverLavanda(MouseEvent event) {
+        ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+
 }
