@@ -24,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -72,22 +73,6 @@ public class HistoryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         spinnerAno.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1900, 2100, LocalDate.now().getYear()));
-        
-        voltarButton.setOnMouseEntered(e ->
-            voltarButton.setStyle("-fx-background-color: #4e8fb5; -fx-text-fill: white;")
-        );
-
-        voltarButton.setOnMouseExited(e ->
-            voltarButton.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white;")
-        );
-        
-        btnTimeMachine.setOnMouseEntered(e ->
-            btnTimeMachine.setStyle("-fx-background-color: #4e8fb5; -fx-text-fill: white;")
-        );
-
-        btnTimeMachine.setOnMouseExited(e ->
-            btnTimeMachine.setStyle("-fx-background-color: #A2D5F2; -fx-text-fill: white;")
-        );
         
         for (Month month : Month.values()) {
             comboMes.getItems().add(month.getDisplayName(TextStyle.FULL, new Locale("pt", "PT")));
@@ -181,5 +166,23 @@ public class HistoryController implements Initializable {
         }
     }
 }
+    @FXML
+    private void hoverAzul(MouseEvent event) {
+        Button btn = (Button) event.getSource();
+        btn.setStyle("-fx-background-color: #90C3D4; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    @FXML
+    private void sairHoverAzul(MouseEvent event) {
+        Button btn = (Button) event.getSource();
+        btn.setStyle("-fx-background-color:  #A6DCEF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    @FXML
+    private void hoverLavanda(MouseEvent event) {
+        ((Button) event.getSource()).setStyle("-fx-background-color: #C1A6F5; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
 
+    @FXML
+    private void sairHoverLavanda(MouseEvent event) {
+        ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
 }
