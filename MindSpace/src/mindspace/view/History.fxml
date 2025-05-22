@@ -16,17 +16,17 @@
     <children>
         <HBox alignment="CENTER" layoutX="1.0" layoutY="3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="42.0" prefWidth="600.0" spacing="10.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="3.0">
             <children>
-            <Button fx:id="voltarButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#voltarParaMenuPrincipal" style="-fx-background-color: #A2D5F2; -fx-background-radius: 10px;" text="Voltar" textFill="WHITE">
+            <Button fx:id="voltarButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#voltarParaMenuPrincipal" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Voltar" textFill="#37474f">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font size="14.0" />
                </font>
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-                <Spinner fx:id="spinnerAno" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" style="-fx-background-color: #A2D5F2; -fx-background-radius: 10px;" />
-                <ComboBox fx:id="comboMes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Novembro" style="-fx-background-color: #A2D5F2; -fx-background-radius: 10px; -fx-text-fill: white;" />
-                <Button fx:id="btnTimeMachine" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold; -fx-font-size: 14; -fx-background-color: #A2D5F2; -fx-background-radius: 10px;" text="Dia Atual" textFill="WHITE">
+                <Spinner fx:id="spinnerAno" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="100.0" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" />
+                <ComboBox fx:id="comboMes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Novembro" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20; -fx-text-fill: white;" />
+                <Button fx:id="btnTimeMachine" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" style="-fx-font-size: 14; -fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Dia Atual" textFill="#37474f">
                <font>
                   <Font size="14.0" />
                </font></Button>
@@ -38,13 +38,13 @@
 
         <GridPane fx:id="gridCalendario" hgap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="1.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
             <children>
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Seg" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Ter" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Qua" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Qui" GridPane.columnIndex="3" GridPane.rowIndex="0" />
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Sex" GridPane.columnIndex="4" GridPane.rowIndex="0" />
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Sab" GridPane.columnIndex="5" GridPane.rowIndex="0" />
-                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #e3def5; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Dom" GridPane.columnIndex="6" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Seg" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Ter" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Qua" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Qui" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Sex" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Sab" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+                <Label maxHeight="Infinity" maxWidth="Infinity" style="-fx-background-color: #D5BFFF; -fx-text-fill: #1a1a1a; -fx-alignment: center; -fx-border-color: grey; -fx-border-width: 1;" text="Dom" GridPane.columnIndex="6" GridPane.rowIndex="0" />
             </children>
 
             <columnConstraints>
