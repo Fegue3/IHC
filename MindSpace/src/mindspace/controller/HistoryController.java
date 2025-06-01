@@ -107,7 +107,7 @@ public class HistoryController implements Initializable {
     private void atualizarCalendario() {
     gridCalendario.getChildren().removeIf(node -> GridPane.getRowIndex(node) != null && GridPane.getRowIndex(node) > 0);
 
-    carregarDadosFicheiro(); // <<< ADICIONAR AQUI
+    carregarDadosFicheiro();
 
     int ano = spinnerAno.getValue();
     int mes = comboMes.getSelectionModel().getSelectedIndex() + 1;
