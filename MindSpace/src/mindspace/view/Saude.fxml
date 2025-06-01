@@ -63,7 +63,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnRespiracao" mnemonicParsing="false" onDragEntered="#hoverAzul" onDragExited="#sairHoverAzul" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" prefHeight="40.0" prefWidth="331.0" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Exercícios de Respiração" textFill="#37474f">
+                  <Button fx:id="btnRespiracao" mnemonicParsing="false" onAction="#irParaRespiracao" onDragEntered="#hoverAzul" onDragExited="#sairHoverAzul" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" prefHeight="40.0" prefWidth="331.0" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Exercício de Respiração" textFill="#37474f">
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" />
                      </VBox.margin>
