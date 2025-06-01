@@ -124,7 +124,7 @@ public class HistoryController implements Initializable {
         String dataStr = String.format("%02d/%02d/%d", dia, mes, ano);
 
         Label lbl = new Label(String.valueOf(dia));
-        lbl.setPrefSize(60, 40);
+        lbl.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         lbl.setFont(new Font(16));
         lbl.setStyle("-fx-alignment: center; -fx-border-color: gray;");
 
