@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -39,6 +40,21 @@ public class SaudeController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    @FXML
+    private void irParaRespiracao(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/BreathingEx.fxml"));
+            Parent root = loader.load();
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Exercício de Respiração");
+            novaJanela.setScene(new Scene(root));
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
     
     @FXML
     private void hoverAzul(MouseEvent event) {
