@@ -31,7 +31,7 @@ import javafx.stage.Stage;
 
 public class HistoryController implements Initializable {
     
-    private final String FICHEIRO_DADOS = "data/registos.txt";
+    private final String FICHEIRO_DADOS = "src/mindspace/data/registos.txt";
     private Map<String, List<String>> mapaDados = new HashMap<>();
 
     

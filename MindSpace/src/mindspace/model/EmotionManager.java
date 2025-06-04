@@ -12,7 +12,7 @@ import java.io.File;
 
 public class EmotionManager {
 
-    private static final String FILE_PATH = "data/registos.txt";
+    private static final String FILE_PATH = "src/mindspace/data/registos.txt";
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
     public static int getPoints(String emotion) {

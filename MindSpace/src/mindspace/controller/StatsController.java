@@ -43,7 +43,7 @@ public class StatsController implements Initializable {
     }
 
     private void carregarDados() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/registos.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/mindspace/data/registos.txt"))) {
             String linha, data = null, emocao = null;
             int pontos = 0;
 
