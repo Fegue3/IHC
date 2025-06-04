@@ -41,7 +41,6 @@ public class RelaxingSoundsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         comboBoxSons.getItems().addAll("Sons da Natureza", "Música Ambiental", "Ruído Branco");
-        audioVBox.setVisible(false);
         
         comboBoxSons.setOnAction(e -> tocarSomSelecionado());
 
@@ -129,13 +128,4 @@ public class RelaxingSoundsController implements Initializable {
         ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
     
-    @FXML
-    private void hoverVermelho(MouseEvent event) {
-        ((Button) event.getSource()).setStyle("-fx-background-color: #f29c9c; -fx-text-fill: #37474F; -fx-background-radius: 20;");
-    }
-
-    @FXML
-    private void sairHoverVermelho(MouseEvent event) {
-        ((Button) event.getSource()).setStyle("-fx-background-color: #ffcccc; -fx-text-fill: #37474F; -fx-background-radius: 20;");
-    }
 }

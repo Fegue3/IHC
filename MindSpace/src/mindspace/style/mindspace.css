@@ -27,4 +27,19 @@
     -fx-text-fill: #37474F;
 }
 
+#comboBoxSons {
+    -fx-font-size: 16px;
+    -fx-background-color: #c2eafd;
+    -fx-text-fill: #333333;
+    -fx-background-radius: 15;
+}
+
+#comboBoxSons .arrow-button {
+    -fx-background-color: transparent;
+}
+
+#comboBoxSons .list-cell {
+    -fx-font-size: 16px;
+}
+
 
