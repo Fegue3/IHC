@@ -50,7 +50,7 @@ public class StatsController implements Initializable {
 
         btnRaiva.setOnAction(e -> 
             mostrarEmocoes(Set.of("Confuso","Frustrado"), "Raiva"));
-
+        
     }
 
     private void carregarDados() {

@@ -1,0 +1,32 @@
+.slider .track {
+    -fx-background-color: #A6DCEF;
+}
+
+.slider .thumb {
+    -fx-background-color: white;
+}
+
+.spinner {
+    -fx-background-color: #A6DCEF;
+    -fx-text-fill: #37474F;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.spinner .text-field {
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+    -fx-font-size: 14px;
+}
+
+.label {
+    -fx-text-fill: #37474F;
+}
+
+
