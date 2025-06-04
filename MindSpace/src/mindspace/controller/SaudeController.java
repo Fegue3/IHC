@@ -54,6 +54,19 @@ public class SaudeController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private void irParaSonsRelaxantes(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/RelaxingSounds.fxml"));
+            Parent root = loader.load();
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Exercício de Respiração");
+            novaJanela.setScene(new Scene(root));
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     
     
     @FXML
