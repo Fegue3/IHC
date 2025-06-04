@@ -9,7 +9,6 @@
 .spinner {
     -fx-background-color: #A6DCEF;
     -fx-text-fill: #37474F;
-    -fx-font-size: 14px;
     -fx-border-color: transparent;
 }
 
@@ -22,7 +21,6 @@
 .spinner .text-field {
     -fx-background-color: transparent;
     -fx-alignment: center;
-    -fx-font-size: 14px;
 }
 
 .label {
