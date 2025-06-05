@@ -67,7 +67,20 @@ public class SaudeController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+    @FXML
+private void irParaMeditacao(ActionEvent event) {
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/Meditacao.fxml"));
+        Parent root = loader.load();
+        Stage novaJanela = new Stage();
+        novaJanela.setTitle("Dicas de Meditação");
+        novaJanela.setScene(new Scene(root));
+        novaJanela.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
     
     @FXML
     private void hoverAzul(MouseEvent event) {
