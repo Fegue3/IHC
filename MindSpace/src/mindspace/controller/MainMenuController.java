@@ -7,6 +7,7 @@ package mindspace.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -33,11 +34,20 @@ public class MainMenuController implements Initializable {
     @FXML private VBox btnRegistar;
     @FXML private Label labelRegistar;
     
-    @FXML
-    private void abrirRegisto() {
-        trocarCena("RegisterView.fxml");
-    }
 
+    @FXML
+    private void abrirRegisto(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/RegisterView.fxml"));
+            Parent root = loader.load();
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Exercício de Respiração");
+            novaJanela.setScene(new Scene(root));
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     @FXML
     private void abrirCalendario() {
         trocarCena("History.fxml");
