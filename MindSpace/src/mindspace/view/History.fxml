@@ -27,9 +27,9 @@
             </Button>
                 <Spinner fx:id="spinnerAno" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="80.0" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" />
                 <ComboBox fx:id="comboMes" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="33.0" prefWidth="108.0" promptText="Novembro" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20; -fx-text-fill: white;" />
-                <Button fx:id="btnTimeMachine" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" style="-fx-font-size: 14; -fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Dia Atual" textFill="#37474f">
+                <Button fx:id="btnTimeMachine" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Dia Atual" textFill="#37474f">
                <font>
-                  <Font size="18.0" />
+                  <Font size="14.0" />
                </font>
             </Button>
             </children>
