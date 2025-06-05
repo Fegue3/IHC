@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="mindspace.controller.MeditacaoController"
+            prefWidth="400" prefHeight="600" style="-fx-background-color: #f0fbff;">
+    
+    <top>
+        <VBox alignment="CENTER" spacing="5" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Dicas de Meditação" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #313A4D;" />
+                <Label text="Inspira. Expira. Aqui estão algumas dicas para começares a tua jornada de meditação."
+                       wrapText="true" maxWidth="300"
+                       style="-fx-font-size: 14px; -fx-text-fill: #707070; -fx-font-style: italic;" />
+            </children>
+            <padding><Insets top="20"/></padding>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="CENTER">
+            <StackPane alignment="TOP_CENTER">
+                <VBox fx:id="dicasContainer" spacing="10" maxWidth="500.0">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                </VBox>
+            </StackPane>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <Button text="Voltar" onAction="#voltar"
+                    style="-fx-background-color: #D7C7F9; -fx-font-size: 14px; -fx-background-radius: 20;" />
+            <padding><Insets top="10" bottom="20"/></padding>
+        </VBox>
+    </bottom>
+</BorderPane>
