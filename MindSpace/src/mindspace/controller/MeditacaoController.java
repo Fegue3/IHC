@@ -11,8 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -51,6 +53,7 @@ public class MeditacaoController implements Initializable {
         VBox card = new VBox();
         card.setPadding(new Insets(10));
         card.setSpacing(5);
+        card.getStyleClass().add("tip-card");
         card.setStyle("-fx-background-color: #E6F7FA; -fx-background-radius: 10;");
         
         Label tituloLabel = new Label(titulo);
@@ -71,4 +74,15 @@ public class MeditacaoController implements Initializable {
         stage.close();
         // ou muda de cena se quiseres usar navegação interna
     }
+    
+    @FXML
+    private void hoverLavanda(MouseEvent event) {
+        ((Button) event.getSource()).setStyle("-fx-background-color: #C1A6F5; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    
+    @FXML
+    private void sairHoverLavanda(MouseEvent event) {
+        ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
+    }
+    
 }

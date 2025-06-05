@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="mindspace.controller.MeditacaoController"
-            prefWidth="400" prefHeight="600" style="-fx-background-color: #f0fbff;">
+<BorderPane prefHeight="600" prefWidth="400" style="-fx-background-color: #f0fbff;" stylesheets="@../style/mindspace.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.MeditacaoController">
     
     <top>
         <VBox alignment="CENTER" spacing="5" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Dicas de Meditação" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #313A4D;" />
-                <Label text="Inspira. Expira. Aqui estão algumas dicas para começares a tua jornada de meditação."
-                       wrapText="true" maxWidth="300"
-                       style="-fx-font-size: 14px; -fx-text-fill: #707070; -fx-font-style: italic;" />
+                <Label style="-fx-text-fill: #313A4D;" text="Dicas de Meditação" textFill="#37474f">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Label>
+                <Label maxWidth="300" style="-fx-text-fill: #707070; -fx-font-style: italic;" text="Inspira. Expira. Aqui estão algumas dicas para começares a tua jornada de meditação." textFill="#37474f" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
             </children>
-            <padding><Insets top="20"/></padding>
+            <padding><Insets top="20" /></padding>
         </VBox>
     </top>
     <center>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" BorderPane.alignment="CENTER">
             <StackPane alignment="TOP_CENTER">
-                <VBox fx:id="dicasContainer" spacing="10" maxWidth="500.0">
+                <VBox fx:id="dicasContainer" maxWidth="500.0" spacing="10">
                     <padding>
-                        <Insets top="10" right="10" bottom="10" left="10"/>
+                        <Insets bottom="10" left="10" right="10" top="10" />
                     </padding>
                 </VBox>
             </StackPane>
@@ -33,9 +39,11 @@
     </center>
     <bottom>
         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-            <Button text="Voltar" onAction="#voltar"
-                    style="-fx-background-color: #D7C7F9; -fx-font-size: 14px; -fx-background-radius: 20;" />
-            <padding><Insets top="10" bottom="20"/></padding>
+            <Button onAction="#voltar" onMouseEntered="#hoverLavanda" onMouseExited="#sairHoverLavanda" style="-fx-background-color: #D7C7F9; -fx-background-radius: 20;" text="Voltar" textFill="#37474f">
+            <font>
+               <Font size="18.0" />
+            </font></Button>
+            <padding><Insets bottom="20" top="10" /></padding>
         </VBox>
     </bottom>
 </BorderPane>
