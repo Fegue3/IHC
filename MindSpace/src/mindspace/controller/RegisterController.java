@@ -155,17 +155,8 @@ private void animateIcon(ImageView icon) {
         alert.setHeaderText(null);
         alert.setContentText("O teu registo foi guardado com sucesso. Obrigado por partilhares 💙");
         alert.showAndWait();
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/MainMenu.fxml"));
-            Parent root = loader.load();
-
-            // Usa qualquer nó da tua interface atual (ex: o botão "Guardar" ou o TextArea)
-            Stage stage = (Stage) noteArea.getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Stage stage = (Stage) noteArea.getScene().getWindow();
+        stage.close();
     }
     @FXML
     public void handleEmotionExit(MouseEvent event) {
