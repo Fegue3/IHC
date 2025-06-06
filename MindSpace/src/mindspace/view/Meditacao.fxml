@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -38,7 +39,24 @@
         </ScrollPane>
     </center>
     <bottom>
-        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" spacing="10.0" BorderPane.alignment="CENTER">
+         <HBox alignment="CENTER" prefHeight="22.0" prefWidth="400.0" spacing="20.0">
+            <children>
+               <Button fx:id="btnAdicionar" mnemonicParsing="false" onAction="#adicionarDicaDialog" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Adicionar Dica" textFill="#37474f">
+                  <font>
+                     <Font size="22.0" />
+                  </font>
+               </Button>
+               <Button fx:id="btnRemover" mnemonicParsing="false" onAction="#ativarModoRemover" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Remover Dica" textFill="#37474f">
+                  <font>
+                     <Font size="22.0" />
+                  </font>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </HBox>
             <Button onAction="#voltar" onMouseEntered="#hoverLavanda" onMouseExited="#sairHoverLavanda" style="-fx-background-color: #D7C7F9; -fx-background-radius: 20;" text="Voltar" textFill="#37474f">
             <font>
                <Font size="18.0" />

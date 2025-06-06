@@ -45,7 +45,7 @@ public class RelaxingSoundsController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        comboBoxSons.getItems().addAll("Sons da Natureza", "Música Ambiental", "Ruído Branco");
+        comboBoxSons.getItems().addAll("Som da Natureza", "Som da Água", "Música Ambiental");
         playImage = new Image(getClass().getResourceAsStream("/mindspace/resources/play.png"));
         pauseImage = new Image(getClass().getResourceAsStream("/mindspace/resources/pause.png"));
         playPauseIcon.setImage(playImage);
@@ -101,9 +101,9 @@ public class RelaxingSoundsController implements Initializable {
     if (somEscolhido == null) return;
 
     String path = switch (somEscolhido) {
-        case "Sons da Natureza" -> "/mindspace/resources/sounds/natureza.mp3";
-        case "Música Ambiental" -> "/mindspace/resources/sounds/ambiental.mp3";
-        case "Ruído Branco" -> "/mindspace/resources/sounds/ruido.mp3";
+        case "Som da Natureza" -> "/mindspace/resources/sounds/natureza.mp3";
+        case "Som da Água" -> "/mindspace/resources/sounds/ambiental.mp3";
+        case "Música Ambiental" -> "/mindspace/resources/sounds/ruido.mp3";
         default -> null;
     };
 

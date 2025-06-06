@@ -41,7 +41,7 @@ public class MainMenuController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/RegisterView.fxml"));
             Parent root = loader.load();
             Stage novaJanela = new Stage();
-            novaJanela.setTitle("Exercício de Respiração");
+            novaJanela.setTitle("Registo de Emoção");
             novaJanela.setScene(new Scene(root));
             novaJanela.show();
         } catch (IOException e) {
