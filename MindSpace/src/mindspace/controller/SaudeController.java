@@ -62,6 +62,7 @@ public class SaudeController implements Initializable {
             Stage novaJanela = new Stage();
             novaJanela.setTitle("Sons Relaxantes");
             novaJanela.setScene(new Scene(root));
+            novaJanela.setResizable(false);
             novaJanela.show();
         } catch (IOException e) {
             e.printStackTrace();

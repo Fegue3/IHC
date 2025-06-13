@@ -203,3 +203,23 @@ Emoção: Radiante
 Nota: (sem comentário)
 Pontos: 6
 ---------------------------
+Data: 12/06/2025
+Emoção: Feliz
+Nota: o dia correu bem
+Pontos: 4
+---------------------------
+Data: 12/06/2025
+Emoção: Em baixo
+Nota: (sem comentário)
+Pontos: -2
+---------------------------
+Data: 12/06/2025
+Emoção: Tranquilo
+Nota: (sem comentário)
+Pontos: 2
+---------------------------
+Data: 12/06/2025
+Emoção: Radiante
+Nota: kokjnjn
+Pontos: 6
+---------------------------

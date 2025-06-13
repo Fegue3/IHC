@@ -21,7 +21,7 @@
                   <Font name="System Bold" size="45.0" />
                </font>
             </Label>
-            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="190.0" prefWidth="606.0" style="parent; -fx-padding: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="190.0" prefWidth="606.0" style="-fx-padding: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                <content>
                   <HBox fx:id="emotionImagesDetails" alignment="CENTER" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="228.0" prefWidth="598.0" spacing="5.0" style="-fx-background-color: #EFF7FB; -fx-border-color: transparent; -fx-border-width: 0; -fx-padding: 0; -fx-background-insets: 0; -fx-border-insets: 0; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;">
                      <children>
