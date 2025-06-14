@@ -32,35 +32,39 @@ import javafx.util.Duration;
  * @author fp226
  */
 public class BreathingExController implements Initializable {
-    
-    @FXML private Label countdownLabel, phaseLabel;
-    @FXML private Button btnVoltar, btnMain;
-    @FXML private Circle breathingCircle;
-    
+
+    @FXML
+    private Label countdownLabel, phaseLabel;
+    @FXML
+    private Button btnVoltar, btnMain;
+    @FXML
+    private Circle breathingCircle;
+
     private boolean emExecucao = false;
     private final String[] phases = {"Inspira", "Segura", "Expira"};
     private final int phaseDuration = 4;
     private int currentPhase = 0;
     private Timeline timelineAtual;
-    
-     @FXML
+
+    @FXML
     public void startBreathingCycle() {
         runInitialCountdown(() -> {
             currentPhase = 0;
             nextPhase();
         });
     }
+
     private void runInitialCountdown(Runnable onFinish) {
         Timeline timeline = new Timeline();
         for (int i = 1; i <= phaseDuration; i++) {
             int count = i;
             KeyFrame kf = new KeyFrame(Duration.seconds(i - 1),
-                e -> {
-                    phaseLabel.setText(String.valueOf(count));
-                    phaseLabel.setStyle("-fx-font-size: 42px; -fx-text-fill: #37474F; -fx-font-weight: bold;");
-                    countdownLabel.setText("");
-                    animatePulse(phaseLabel);
-                });
+                    e -> {
+                        phaseLabel.setText(String.valueOf(count));
+                        phaseLabel.setStyle("-fx-font-size: 42px; -fx-text-fill: #37474F; -fx-font-weight: bold;");
+                        countdownLabel.setText("");
+                        animatePulse(phaseLabel);
+                    });
             timeline.getKeyFrames().add(kf);
         }
 
@@ -71,8 +75,9 @@ public class BreathingExController implements Initializable {
     }
 
     private void nextPhase() {
-        if (currentPhase >= phases.length)
+        if (currentPhase >= phases.length) {
             currentPhase = 0;
+        }
 
         String phase = phases[currentPhase];
         phaseLabel.setText(phase);
@@ -100,9 +105,9 @@ public class BreathingExController implements Initializable {
         Timeline timeline = new Timeline();
         for (int i = phaseDuration; i >= 1; i--) {
             int count = i;
-             KeyFrame kf = new KeyFrame(Duration.seconds(phaseDuration - i), e -> {
+            KeyFrame kf = new KeyFrame(Duration.seconds(phaseDuration - i), e -> {
                 countdownLabel.setText(String.valueOf(count));
-                animatePulse(countdownLabel); 
+                animatePulse(countdownLabel);
             });
             timeline.getKeyFrames().add(kf);
         }
@@ -111,7 +116,7 @@ public class BreathingExController implements Initializable {
         timelineAtual = timeline;
         timeline.play();
     }
-    
+
     private void animatePulse(Label label) {
         ScaleTransition scale = new ScaleTransition(Duration.millis(300), label);
         scale.setFromX(1.0);
@@ -122,47 +127,53 @@ public class BreathingExController implements Initializable {
         scale.setCycleCount(2);
         scale.play();
     }
-    
+
     private void animateFadeAndScale(Label label) {
-    FadeTransition fade = new FadeTransition(Duration.millis(300), label);
-    fade.setFromValue(0);
-    fade.setToValue(1);
+        FadeTransition fade = new FadeTransition(Duration.millis(300), label);
+        fade.setFromValue(0);
+        fade.setToValue(1);
 
-    ScaleTransition scale = new ScaleTransition(Duration.millis(300), label);
-    scale.setFromX(0.9);
-    scale.setFromY(0.9);
-    scale.setToX(1.1);
-    scale.setToY(1.1);
+        ScaleTransition scale = new ScaleTransition(Duration.millis(300), label);
+        scale.setFromX(0.9);
+        scale.setFromY(0.9);
+        scale.setToX(1.1);
+        scale.setToY(1.1);
 
-    ParallelTransition transition = new ParallelTransition(fade, scale);
-    transition.play();
-}
+        ParallelTransition transition = new ParallelTransition(fade, scale);
+        transition.play();
+    }
 
-
-     private void animateCircle(String phase) {
+    private void animateCircle(String phase) {
         double fromRadius = breathingCircle.getRadius();
         double toRadius = switch (phase) {
-            case "Inspira" -> 115;
-            case "Expira" -> 80;
-            default -> 100;
+            case "Inspira" ->
+                115;
+            case "Expira" ->
+                80;
+            default ->
+                100;
         };
         Color targetColor = switch (phase) {
-            case "Inspira" -> Color.web("#A6DCEF");
-            case "Expira" -> Color.web("#ffcccc");
-            case "Segura" -> Color.web("#C1A6F5");
-            default -> Color.LIGHTGRAY;
+            case "Inspira" ->
+                Color.web("#A6DCEF");
+            case "Expira" ->
+                Color.web("#ffcccc");
+            case "Segura" ->
+                Color.web("#C1A6F5");
+            default ->
+                Color.LIGHTGRAY;
         };
         Timeline circleAnim = new Timeline(
-            new KeyFrame(Duration.ZERO,
-                new KeyValue(breathingCircle.radiusProperty(), fromRadius),
-                new KeyValue(breathingCircle.fillProperty(), breathingCircle.getFill())),
-            new KeyFrame(Duration.seconds(1),
-                new KeyValue(breathingCircle.radiusProperty(), toRadius),
-                new KeyValue(breathingCircle.fillProperty(), targetColor))
+                new KeyFrame(Duration.ZERO,
+                        new KeyValue(breathingCircle.radiusProperty(), fromRadius),
+                        new KeyValue(breathingCircle.fillProperty(), breathingCircle.getFill())),
+                new KeyFrame(Duration.seconds(1),
+                        new KeyValue(breathingCircle.radiusProperty(), toRadius),
+                        new KeyValue(breathingCircle.fillProperty(), targetColor))
         );
         circleAnim.play();
     }
-    
+
     @FXML
     public void stopBreathingCycle() {
         if (timelineAtual != null) {
@@ -173,7 +184,7 @@ public class BreathingExController implements Initializable {
         countdownLabel.setText("");
         animateCircle("Parado");
     }
-    
+
     @FXML
     public void handleMainButton() {
         if (!emExecucao) {
@@ -191,7 +202,6 @@ public class BreathingExController implements Initializable {
         }
     }
 
-    
     @FXML
     private void voltarParaMenuPrincipal() {
         try {
@@ -203,7 +213,7 @@ public class BreathingExController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void hoverMainButton(MouseEvent event) {
         Button btn = (Button) event.getSource();
@@ -231,6 +241,7 @@ public class BreathingExController implements Initializable {
             btn.setStyle("-fx-background-color: #A6DCEF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
         }
     }
+
     @FXML
     private void hoverLavanda(MouseEvent event) {
         ((Button) event.getSource()).setStyle("-fx-background-color: #C1A6F5; -fx-text-fill: #37474F; -fx-background-radius: 20;");
@@ -241,9 +252,8 @@ public class BreathingExController implements Initializable {
         ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
 
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 }
