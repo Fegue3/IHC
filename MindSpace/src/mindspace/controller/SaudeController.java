@@ -25,10 +25,13 @@ import javafx.stage.Stage;
  */
 public class SaudeController implements Initializable {
 
-    @FXML private Button btnVoltar, buttonMeditacao, btnRespiracao, btnSons;
+    @FXML
+    private Button btnVoltar, buttonMeditacao, btnRespiracao, btnSons;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }    
+    }
+
     @FXML
     private void voltarParaMenuPrincipal() {
         try {
@@ -40,7 +43,7 @@ public class SaudeController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
     private void irParaRespiracao(ActionEvent event) {
         try {
@@ -54,6 +57,7 @@ public class SaudeController implements Initializable {
             e.printStackTrace();
         }
     }
+
     @FXML
     private void irParaSonsRelaxantes(ActionEvent event) {
         try {
@@ -68,31 +72,33 @@ public class SaudeController implements Initializable {
             e.printStackTrace();
         }
     }
-    @FXML
-private void irParaMeditacao(ActionEvent event) {
-    try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/Meditacao.fxml"));
-        Parent root = loader.load();
-        Stage novaJanela = new Stage();
-        novaJanela.setTitle("Dicas de Meditação");
-        novaJanela.setScene(new Scene(root));
-        novaJanela.show();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
 
-    
+    @FXML
+    private void irParaMeditacao(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/mindspace/view/Meditacao.fxml"));
+            Parent root = loader.load();
+            Stage novaJanela = new Stage();
+            novaJanela.setTitle("Dicas de Meditação");
+            novaJanela.setScene(new Scene(root));
+            novaJanela.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     private void hoverAzul(MouseEvent event) {
         Button btn = (Button) event.getSource();
         btn.setStyle("-fx-background-color: #90C3D4; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
+
     @FXML
     private void sairHoverAzul(MouseEvent event) {
         Button btn = (Button) event.getSource();
         btn.setStyle("-fx-background-color:  #A6DCEF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
+
     @FXML
     private void hoverLavanda(MouseEvent event) {
         ((Button) event.getSource()).setStyle("-fx-background-color: #C1A6F5; -fx-text-fill: #37474F; -fx-background-radius: 20;");

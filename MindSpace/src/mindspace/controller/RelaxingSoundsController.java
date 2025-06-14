@@ -30,19 +30,26 @@ import javafx.util.Duration;
  * @author fp226
  */
 public class RelaxingSoundsController implements Initializable {
-    @FXML private Button btnVoltar, btnParar;
-    @FXML private ComboBox<String> comboBoxSons;
-    @FXML private Label labelSomAtual, labelTempo;
-    @FXML private Slider VolumeSLider, sliderProgresso;
-    @FXML private ImageView iconSom, playPauseIcon;
-    @FXML private VBox audioVBox;
+
+    @FXML
+    private Button btnVoltar, btnParar;
+    @FXML
+    private ComboBox<String> comboBoxSons;
+    @FXML
+    private Label labelSomAtual, labelTempo;
+    @FXML
+    private Slider VolumeSLider, sliderProgresso;
+    @FXML
+    private ImageView iconSom, playPauseIcon;
+    @FXML
+    private VBox audioVBox;
     private boolean isPlaying = false;
-    private boolean somCarregado = false; 
+    private boolean somCarregado = false;
     private Image playImage;
     private Image pauseImage;
-    
+
     private MediaPlayer mediaPlayer;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         comboBoxSons.getItems().addAll("Som da Natureza", "Som da Água", "Música Ambiental");
@@ -58,29 +65,30 @@ public class RelaxingSoundsController implements Initializable {
             }
         });
         sliderProgresso.setOnMousePressed(event -> {
-        if (mediaPlayer != null) {
-            mediaPlayer.seek(Duration.seconds(sliderProgresso.getValue()));
+            if (mediaPlayer != null) {
+                mediaPlayer.seek(Duration.seconds(sliderProgresso.getValue()));
             }
         });
         sliderProgresso.setOnMouseReleased(event -> {
-        if (mediaPlayer != null) {
-            mediaPlayer.seek(Duration.seconds(sliderProgresso.getValue()));
+            if (mediaPlayer != null) {
+                mediaPlayer.seek(Duration.seconds(sliderProgresso.getValue()));
             }
         });
         sliderProgresso.valueChangingProperty().addListener((obs, wasChanging, isChanging) -> {
-        if (!isChanging && mediaPlayer != null) {
-            mediaPlayer.seek(Duration.seconds(sliderProgresso.getValue()));
+            if (!isChanging && mediaPlayer != null) {
+                mediaPlayer.seek(Duration.seconds(sliderProgresso.getValue()));
             }
         });
         sliderProgresso.setOnMouseClicked(e -> {
-        if (mediaPlayer != null) {
-            double mouseX = e.getX();
-            double percent = mouseX / sliderProgresso.getWidth();
-            double seekTime = percent * sliderProgresso.getMax();
-            mediaPlayer.seek(Duration.seconds(seekTime));
+            if (mediaPlayer != null) {
+                double mouseX = e.getX();
+                double percent = mouseX / sliderProgresso.getWidth();
+                double seekTime = percent * sliderProgresso.getMax();
+                mediaPlayer.seek(Duration.seconds(seekTime));
             }
         });
-    }    
+    }
+
     @FXML
     private void voltarParaMenuPrincipal() {
         pararSom();
@@ -93,67 +101,76 @@ public class RelaxingSoundsController implements Initializable {
             e.printStackTrace();
         }
     }
-    
-   private void tocarSomSelecionado() {
-    pararSom();
 
-    String somEscolhido = comboBoxSons.getValue();
-    if (somEscolhido == null) return;
+    private void tocarSomSelecionado() {
+        pararSom();
 
-    String path = switch (somEscolhido) {
-        case "Som da Natureza" -> "/mindspace/resources/sounds/natureza.mp3";
-        case "Som da Água" -> "/mindspace/resources/sounds/ambiental.mp3";
-        case "Música Ambiental" -> "/mindspace/resources/sounds/ruido.mp3";
-        default -> null;
-    };
-
-    URL resource = getClass().getResource(path);
-    if (resource == null) {
-        System.err.println("Ficheiro nao encontrado: " + path);
-        return;
-    }
-
-    Media media = new Media(resource.toExternalForm());
-    mediaPlayer = new MediaPlayer(media);
-    mediaPlayer.setVolume(VolumeSLider.getValue());
-
-    mediaPlayer.setOnReady(() -> {
-        Duration total = mediaPlayer.getTotalDuration();
-        sliderProgresso.setMax(total.toSeconds());
-
-        mediaPlayer.play(); // começa a tocar assim que estiver pronto
-        isPlaying = true;
-        if (playPauseIcon != null && pauseImage != null)
-            playPauseIcon.setImage(pauseImage); // mostra o botão de "pause"
-    });
-
-    mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
-        if (!sliderProgresso.isValueChanging()) {
-            sliderProgresso.setValue(newTime.toSeconds());
+        String somEscolhido = comboBoxSons.getValue();
+        if (somEscolhido == null) {
+            return;
         }
 
-        int minutes = (int) newTime.toMinutes();
-        int seconds = (int) newTime.toSeconds() % 60;
-        labelTempo.setText(String.format("%02d:%02d", minutes, seconds));
-    });
+        String path = switch (somEscolhido) {
+            case "Som da Natureza" ->
+                "/mindspace/resources/sounds/natureza.mp3";
+            case "Som da Água" ->
+                "/mindspace/resources/sounds/ambiental.mp3";
+            case "Música Ambiental" ->
+                "/mindspace/resources/sounds/ruido.mp3";
+            default ->
+                null;
+        };
 
-    labelSomAtual.setText(somEscolhido);
-    iconSom.setOpacity(0.7);
-}
+        URL resource = getClass().getResource(path);
+        if (resource == null) {
+            System.err.println("Ficheiro nao encontrado: " + path);
+            return;
+        }
 
-    private void togglePlayPause() {
-    if (mediaPlayer == null) return;
+        Media media = new Media(resource.toExternalForm());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setVolume(VolumeSLider.getValue());
 
-    if (isPlaying) {
-        mediaPlayer.pause();
-        playPauseIcon.setImage(playImage);
-    } else {
-        mediaPlayer.play();
-        playPauseIcon.setImage(pauseImage);
+        mediaPlayer.setOnReady(() -> {
+            Duration total = mediaPlayer.getTotalDuration();
+            sliderProgresso.setMax(total.toSeconds());
+
+            mediaPlayer.play(); // começa a tocar assim que estiver pronto
+            isPlaying = true;
+            if (playPauseIcon != null && pauseImage != null) {
+                playPauseIcon.setImage(pauseImage); // mostra o botão de "pause"
+            }
+        });
+
+        mediaPlayer.currentTimeProperty().addListener((obs, oldTime, newTime) -> {
+            if (!sliderProgresso.isValueChanging()) {
+                sliderProgresso.setValue(newTime.toSeconds());
+            }
+
+            int minutes = (int) newTime.toMinutes();
+            int seconds = (int) newTime.toSeconds() % 60;
+            labelTempo.setText(String.format("%02d:%02d", minutes, seconds));
+        });
+
+        labelSomAtual.setText(somEscolhido);
+        iconSom.setOpacity(0.7);
     }
 
-    isPlaying = !isPlaying;
-}
+    private void togglePlayPause() {
+        if (mediaPlayer == null) {
+            return;
+        }
+
+        if (isPlaying) {
+            mediaPlayer.pause();
+            playPauseIcon.setImage(playImage);
+        } else {
+            mediaPlayer.play();
+            playPauseIcon.setImage(pauseImage);
+        }
+
+        isPlaying = !isPlaying;
+    }
 
     @FXML
     private void pararSom() {
@@ -166,15 +183,15 @@ public class RelaxingSoundsController implements Initializable {
         labelTempo.setText("00:00");
         iconSom.setOpacity(0.3);
     }
-    
+
     @FXML
     private void hoverLavanda(MouseEvent event) {
         ((Button) event.getSource()).setStyle("-fx-background-color: #C1A6F5; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
-    
+
     @FXML
     private void sairHoverLavanda(MouseEvent event) {
         ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
-    
+
 }
