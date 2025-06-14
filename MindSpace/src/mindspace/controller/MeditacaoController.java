@@ -167,9 +167,7 @@ public class MeditacaoController implements Initializable {
         File tempFile = new File("src/mindspace/data/dicas_temp.txt");
 
         try (
-            BufferedReader reader = new BufferedReader(new FileReader(ficheiroDicas));
-            BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))
-        ) {
+                BufferedReader reader = new BufferedReader(new FileReader(ficheiroDicas)); BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
             String currentLine;
             while ((currentLine = reader.readLine()) != null) {
                 if (!currentLine.trim().equals(linhaAlvo.trim())) {
@@ -196,9 +194,9 @@ public class MeditacaoController implements Initializable {
                         adicionarBotaoRemover(card);
                     }
                 } else {
-                    card.getChildren().removeIf(child ->
-                        child instanceof HBox hbox &&
-                        hbox.getChildren().stream().anyMatch(c -> c.getStyleClass().contains("btn-remover"))
+                    card.getChildren().removeIf(child
+                            -> child instanceof HBox hbox
+                            && hbox.getChildren().stream().anyMatch(c -> c.getStyleClass().contains("btn-remover"))
                     );
                 }
             }
