@@ -8,10 +8,10 @@ package mindspace.model;
  *
  * @author fp226
  */
-
 import java.time.LocalDate;
 
 public class EmotionEntry {
+
     private LocalDate date;
     private String emotion;
     private String note;
@@ -35,12 +35,12 @@ public class EmotionEntry {
     public String getNote() {
         return note;
     }
-    
-    public int getPoints(){
+
+    public int getPoints() {
         return points;
     }
-    
-     @Override
+
+    @Override
     public String toString() {
         return "Data: " + date + "\nEmoção: " + emotion + "\nNota: " + note;
     }
