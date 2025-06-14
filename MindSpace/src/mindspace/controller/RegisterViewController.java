@@ -26,44 +26,57 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import mindspace.model.EmotionEntry;
 import mindspace.model.EmotionManager;
+import mindspace.model.UserSession;
 
 /**
  * FXML Controller class
  *
  * @author fp226
  */
-
-public class RegisterController implements Initializable {
+public class RegisterViewController implements Initializable {
 
     // Pane principal onde a cor de fundo muda
-    @FXML private AnchorPane rootPane;
-    @FXML private HBox emotionImagesDetails;
+    @FXML
+    private AnchorPane rootPane;
+    @FXML
+    private HBox emotionImagesDetails;
     // Zona que aparece após seleção
-    @FXML private VBox emotionDetailsBox;
-    
-    @FXML private TextArea noteArea;
-    @FXML private Button submitButton;
-    @FXML private Label selectedEmotionLabel;
-    @FXML private Label labelRadiante;
-    @FXML private Label labelFeliz;
-    @FXML private Label labelTranquilo;
-    @FXML private Label labelConfuso;
-    @FXML private Label labelEmBaixo;
-    @FXML private Label labelSensivel;
-    @FXML private Label labelFustrado;
-    
+    @FXML
+    private VBox emotionDetailsBox;
+
+    @FXML
+    private TextArea noteArea;
+    @FXML
+    private Button submitButton;
+    @FXML
+    private Label selectedEmotionLabel;
+    @FXML
+    private Label labelRadiante;
+    @FXML
+    private Label labelFeliz;
+    @FXML
+    private Label labelTranquilo;
+    @FXML
+    private Label labelConfuso;
+    @FXML
+    private Label labelEmBaixo;
+    @FXML
+    private Label labelSensivel;
+    @FXML
+    private Label labelFustrado;
+
     // Ícones (ImageViews) das emoções
-    @FXML private ImageView imgRadiante, imgFeliz, imgTranquilo, imgConfuso, imgEmBaixo, imgSensivel, imgFrustrado;
+    @FXML
+    private ImageView imgRadiante, imgFeliz, imgTranquilo, imgConfuso, imgEmBaixo, imgSensivel, imgFrustrado;
 
     private String selectedEmotion = null;
-    
+
     private Map<ImageView, TranslateTransition> activeAnimations = new HashMap<>();
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
-    
+
     @FXML
     private void handleEmotionHover(MouseEvent event) {
         Object source = event.getSource();
@@ -99,35 +112,51 @@ public class RegisterController implements Initializable {
         }
     }
 
-private void animateIcon(ImageView icon) {
-    // Se já está a animar, ignora
-    if (activeAnimations.containsKey(icon)) return;
+    private void animateIcon(ImageView icon) {
+        // Se já está a animar, ignora
+        if (activeAnimations.containsKey(icon)) {
+            return;
+        }
 
-    TranslateTransition jump = new TranslateTransition(Duration.millis(200), icon);
-    jump.setByY(-10);
-    jump.setCycleCount(2);
-    jump.setAutoReverse(true);
+        TranslateTransition jump = new TranslateTransition(Duration.millis(200), icon);
+        jump.setByY(-10);
+        jump.setCycleCount(2);
+        jump.setAutoReverse(true);
 
-    // Guarda a animação como ativa
-    activeAnimations.put(icon, jump);
+        // Guarda a animação como ativa
+        activeAnimations.put(icon, jump);
 
-    // Remove do mapa quando termina
-    jump.setOnFinished(e -> activeAnimations.remove(icon));
+        // Remove do mapa quando termina
+        jump.setOnFinished(e -> activeAnimations.remove(icon));
 
-    jump.play();
-}
+        jump.play();
+    }
 
     private void updateEmotionStyle(String emotion) {
         String backgroundColor = "#EFF7FB"; // Default
 
         switch (emotion) {
-            case "Radiante":  backgroundColor = "#FFF59D"; break;
-            case "Feliz":     backgroundColor = "#AEDFB0"; break;
-            case "Tranquilo": backgroundColor = "#D6F0F5"; break;
-            case "Confuso":   backgroundColor = "#FFF3CD"; break;
-            case "Em baixo":  backgroundColor = "#B0BEC5"; break;
-            case "Sensível":  backgroundColor = "#FFCAD4"; break;
-            case "Frustrado": backgroundColor = "#FFADAD"; break;
+            case "Radiante":
+                backgroundColor = "#FFF59D";
+                break;
+            case "Feliz":
+                backgroundColor = "#AEDFB0";
+                break;
+            case "Tranquilo":
+                backgroundColor = "#D6F0F5";
+                break;
+            case "Confuso":
+                backgroundColor = "#FFF3CD";
+                break;
+            case "Em baixo":
+                backgroundColor = "#B0BEC5";
+                break;
+            case "Sensível":
+                backgroundColor = "#FFCAD4";
+                break;
+            case "Frustrado":
+                backgroundColor = "#FFADAD";
+                break;
         }
 
         rootPane.setStyle("-fx-background-color: " + backgroundColor + ";");
@@ -143,7 +172,8 @@ private void animateIcon(ImageView icon) {
             return;
         }
         int points = EmotionManager.getPoints(selectedEmotion);
-        
+        String userId = UserSession.getUserId();
+        String username = UserSession.getUsername();
         // Criar e imprimir registo
         EmotionEntry entry = new EmotionEntry(LocalDate.now(), selectedEmotion, note, points);
         EmotionManager.guardarRegisto(entry);
@@ -158,6 +188,7 @@ private void animateIcon(ImageView icon) {
         Stage stage = (Stage) noteArea.getScene().getWindow();
         stage.close();
     }
+
     @FXML
     public void handleEmotionExit(MouseEvent event) {
         Object source = event.getSource();
@@ -177,11 +208,11 @@ private void animateIcon(ImageView icon) {
         } else if (source == imgFrustrado) {
             labelFustrado.setVisible(false);
         }
-        
+
         rootPane.setStyle("-fx-background-color: #EFF7FB;");
         emotionImagesDetails.setStyle("-fx-background-color: #EFF7FB");
     }
-    
+
     @FXML
     public void handleEmotionClick(MouseEvent event) {
         Object source = event.getSource();
@@ -212,12 +243,13 @@ private void animateIcon(ImageView icon) {
         alert.setContentText(msg);
         alert.showAndWait();
     }
-    
+
     @FXML
     private void hoverAzul(MouseEvent event) {
         Button btn = (Button) event.getSource();
         btn.setStyle("-fx-background-color: #90C3D4; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
+
     @FXML
     private void sairHoverAzul(MouseEvent event) {
         Button btn = (Button) event.getSource();
