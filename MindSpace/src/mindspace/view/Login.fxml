@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="491.0" prefWidth="324.0" style="-fx-background-color: #EFF7FB;" stylesheets="@../style/mindspace.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.LoginController">
+
+    <!-- Topo com apenas o texto -->
+    <top>
+        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="176.0" prefWidth="324.0" spacing="10" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
+            <children>
+            <ImageView fitHeight="116.0" fitWidth="253.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Título.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="-10.0" />
+               </VBox.margin>
+            </ImageView>
+                <Label text="Login" textFill="#37474f">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+               <VBox.margin>
+                  <Insets top="-20.0" />
+               </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+
+    <!-- Centro com os campos -->
+    <center>
+        <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="248.0" prefWidth="324.0" spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="loginUsernameField" maxWidth="250" prefHeight="23.0" prefWidth="250.0" promptText="Nome de utilizador">
+               <font>
+                  <Font size="18.0" />
+               </font></TextField>
+                <PasswordField fx:id="loginPasswordField" maxWidth="250" promptText="Palavra-passe">
+               <font>
+                  <Font size="18.0" />
+               </font></PasswordField>
+            <CheckBox fx:id="lembrarUtilizadorCheck" mnemonicParsing="false" text="Lembrar Utilizador" textFill="#37474f">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+                <Button fx:id="registerButton" maxWidth="205.0" onAction="#handleLogin" onMouseEntered="#hoverAzul" onMouseExited="#sairHoverAzul" prefHeight="40.0" style="-fx-background-color: #A6DCEF; -fx-background-radius: 20;" text="Login" textFill="#37474f">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+                <Label fx:id="feedbackLabel" style="-fx-text-fill: red;" text="" />
+            </children>
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin>
+        </VBox>
+    </center>
+   <bottom>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="61.0" prefWidth="324.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Não tem conta?" textFill="#37474f">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="linkRegistar" onAction="#handleRegistarRedirect" text="Registar" textFill="#37474f">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Hyperlink>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
