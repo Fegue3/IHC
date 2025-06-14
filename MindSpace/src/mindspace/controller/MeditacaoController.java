@@ -1,9 +1,12 @@
 package mindspace.controller;
 
-import java.io.*;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import static com.mongodb.client.model.Filters.eq;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,37 +19,58 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import mindspace.data.MongoConnection;
+import mindspace.model.UserSession;
+import org.bson.Document;
 
 public class MeditacaoController implements Initializable {
 
     @FXML
     private VBox dicasContainer;
-
     @FXML
     private Button btnAdicionar, btnRemover;
-
     @FXML
     private ScrollPane scrollPane;
 
     private boolean modoRemover = false;
 
-    // Caminho para o ficheiro dentro da pasta data
-    private final File ficheiroDicas = new File("src/mindspace/data/dicas.txt");
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        criarPastaSeNecessario();
-        carregarDicasGuardadas();
-    }
-
-    private void criarPastaSeNecessario() {
-        File pasta = new File("src/mindspace/data");
-        if (!pasta.exists()) {
-            pasta.mkdirs();
+        String userId = UserSession.getUserId();
+        if (userId != null) {
+            importarDicasGlobais(userId);
+            carregarDicasDoMongo(userId);
         }
     }
 
-    private void adicionarDica(String titulo, String descricao) {
+    private void importarDicasGlobais(String userId) {
+        MongoDatabase db = MongoConnection.getDatabase();
+        MongoCollection<Document> dicasGlobais = db.getCollection("dicas_globais");
+        MongoCollection<Document> dicasUser = db.getCollection("dicas");
+
+        long count = dicasUser.countDocuments(eq("userId", userId));
+        if (count > 0) return;
+
+        List<Document> globais = dicasGlobais.find().into(new ArrayList<>());
+        for (Document doc : globais) {
+            Document nova = new Document("userId", userId)
+                .append("titulo", doc.getString("titulo"))
+                .append("descricao", doc.getString("descricao"));
+            dicasUser.insertOne(nova);
+        }
+    }
+
+    private void carregarDicasDoMongo(String userId) {
+        MongoDatabase db = MongoConnection.getDatabase();
+        MongoCollection<Document> dicas = db.getCollection("dicas");
+
+        List<Document> docs = dicas.find(eq("userId", userId)).into(new ArrayList<>());
+        for (Document doc : docs) {
+            adicionarDica(doc.getString("titulo"), doc.getString("descricao"), doc.getObjectId("_id"));
+        }
+    }
+
+    private void adicionarDica(String titulo, String descricao, org.bson.types.ObjectId id) {
         VBox card = new VBox();
         card.setPadding(new Insets(10));
         card.setSpacing(5);
@@ -64,24 +88,30 @@ public class MeditacaoController implements Initializable {
         dicasContainer.getChildren().add(card);
 
         if (modoRemover) {
-            adicionarBotaoRemover(card);
+            adicionarBotaoRemover(card, id);
         }
     }
 
-    private void adicionarBotaoRemover(VBox card) {
+    private void adicionarBotaoRemover(VBox card, org.bson.types.ObjectId id) {
         Button btnX = new Button("✕");
         btnX.getStyleClass().add("btn-remover");
         btnX.setStyle("-fx-background-color: transparent; -fx-text-fill: red; -fx-font-weight: bold;");
         btnX.setOnAction(e -> {
             dicasContainer.getChildren().remove(card);
-            removerDoFicheiro(card);
+            removerDicaDoMongo(id);
         });
 
-        VBox.setMargin(btnX, new Insets(0, 0, 0, 0));
+        VBox.setMargin(btnX, new Insets(0));
         HBox hbox = new HBox(btnX);
         hbox.setPadding(new Insets(0));
         hbox.setStyle("-fx-alignment: top-right;");
         card.getChildren().add(0, hbox);
+    }
+
+    private void removerDicaDoMongo(org.bson.types.ObjectId id) {
+        MongoDatabase db = MongoConnection.getDatabase();
+        MongoCollection<Document> dicas = db.getCollection("dicas");
+        dicas.deleteOne(eq("_id", id));
     }
 
     @FXML
@@ -109,98 +139,33 @@ public class MeditacaoController implements Initializable {
                 String titulo = tituloField.getText().trim();
                 String descricao = descricaoArea.getText().trim();
                 if (!titulo.isEmpty() && !descricao.isEmpty()) {
-                    adicionarDica(titulo, descricao);
-                    guardarDicaEmFicheiro(titulo, descricao);
+                    salvarDicaNoMongo(titulo, descricao);
                 }
             }
         });
     }
 
-    private void guardarDicaEmFicheiro(String titulo, String descricao) {
-        try (FileWriter writer = new FileWriter(ficheiroDicas, true)) {
-            writer.write(titulo.replace("|", " ") + "|" + descricao.replace("|", " ") + "\n");
-        } catch (IOException e) {
-            System.err.println("Erro ao guardar dica: " + e.getMessage());
-        }
-    }
+    private void salvarDicaNoMongo(String titulo, String descricao) {
+        MongoDatabase db = MongoConnection.getDatabase();
+        MongoCollection<Document> dicas = db.getCollection("dicas");
+        String userId = UserSession.getUserId();
 
-    private void carregarDicasGuardadas() {
-        if (!ficheiroDicas.exists()) {
-            try {
-                ficheiroDicas.createNewFile();
-            } catch (IOException e) {
-                System.err.println("Erro ao criar ficheiro: " + e.getMessage());
-            }
-            return;
-        }
+        Document nova = new Document("userId", userId)
+                .append("titulo", titulo)
+                .append("descricao", descricao);
+        dicas.insertOne(nova);
 
-        try (Scanner scanner = new Scanner(ficheiroDicas)) {
-            while (scanner.hasNextLine()) {
-                String linha = scanner.nextLine();
-                if (linha.contains("|")) {
-                    String[] partes = linha.split("\\|", 2);
-                    if (partes.length == 2) {
-                        adicionarDica(partes[0].trim(), partes[1].trim());
-                    }
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Erro ao carregar dicas: " + e.getMessage());
-        }
-    }
-
-    private void removerDoFicheiro(VBox card) {
-        String titulo = "";
-        String descricao = "";
-
-        for (Node n : card.getChildren()) {
-            if (n instanceof Label label) {
-                if (titulo.isEmpty()) {
-                    titulo = label.getText();
-                } else {
-                    descricao = label.getText();
-                }
-            }
-        }
-
-        String linhaAlvo = titulo + "|" + descricao;
-        File tempFile = new File("src/mindspace/data/dicas_temp.txt");
-
-        try (
-                BufferedReader reader = new BufferedReader(new FileReader(ficheiroDicas)); BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
-            String currentLine;
-            while ((currentLine = reader.readLine()) != null) {
-                if (!currentLine.trim().equals(linhaAlvo.trim())) {
-                    writer.write(currentLine);
-                    writer.newLine();
-                }
-            }
-        } catch (IOException e) {
-            System.err.println("Erro ao remover dica do ficheiro: " + e.getMessage());
-            return;
-        }
-
-        ficheiroDicas.delete();
-        tempFile.renameTo(ficheiroDicas);
+        // Recarrega a lista (poderias só adicionar 1)
+        dicasContainer.getChildren().clear();
+        carregarDicasDoMongo(userId);
     }
 
     @FXML
     private void ativarModoRemover(ActionEvent event) {
         modoRemover = !modoRemover;
-        for (Node node : dicasContainer.getChildren()) {
-            if (node instanceof VBox card) {
-                if (modoRemover) {
-                    if (card.lookup(".btn-remover") == null) {
-                        adicionarBotaoRemover(card);
-                    }
-                } else {
-                    card.getChildren().removeIf(child
-                            -> child instanceof HBox hbox
-                            && hbox.getChildren().stream().anyMatch(c -> c.getStyleClass().contains("btn-remover"))
-                    );
-                }
-            }
-        }
+        String userId = UserSession.getUserId();
+        dicasContainer.getChildren().clear();
+        carregarDicasDoMongo(userId);
     }
 
     @FXML
@@ -218,4 +183,4 @@ public class MeditacaoController implements Initializable {
     private void sairHoverLavanda(MouseEvent event) {
         ((Button) event.getSource()).setStyle("-fx-background-color: #D5BFFF; -fx-text-fill: #37474F; -fx-background-radius: 20;");
     }
-}
+} 
