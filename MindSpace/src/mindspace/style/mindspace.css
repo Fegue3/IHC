@@ -55,4 +55,38 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.4, 0, 4);
 }
 
+.check-box .box {
+    -fx-background-color: transparent;
+    -fx-border-color: #A9E5DC;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 5;
+    -fx-pref-width: 14px;
+    -fx-pref-height: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(169,229,220,0.2), 3, 0, 0, 1);
+}
 
+.check-box:hover .box {
+    -fx-border-color: #7cd1c5;
+    -fx-cursor: hand;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #A9E5DC;
+    -fx-border-color: #6ACCC4;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #ffffff;
+    -fx-shape: "M4 8 L7 11 L14 4"; /* Estilo de "visto" */
+}
+
+.hyperlink {
+    -fx-text-fill: #37474F;
+    -fx-underline: false;
+    -fx-cursor: hand;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #A6DCEF; 
+}
