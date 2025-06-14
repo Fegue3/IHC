@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,89 +12,212 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="323.0" style="-fx-background-color: EFF7FB;" stylesheets="@../style/mindspace.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.MainMenuController">
-   <bottom>
-      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="425.0" style="-fx-background-color: #D8F5F2;" BorderPane.alignment="CENTER">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="535.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.MainMenuController">
+   <children>
+      <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="323.0" style="-fx-background-color: EFF7FB;" stylesheets="@../style/mindspace.css">
+         <bottom>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="64.0" prefWidth="425.0" style="-fx-background-color: #D8F5F2;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="imgCalendario" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#abrirCalendario" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/Calendário.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Calendário" textFill="#37474f">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="imgAutocuidado" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#abrirSaude" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/Autocuidados.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Saúde" textFill="#37474f">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="imgEstatisticas" fitHeight="70.0" fitWidth="70.0" nodeOrientation="INHERIT" onMouseClicked="#abrirStats" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/Estatística.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Estatísticas" textFill="#37474f">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <ImageView fx:id="imgConquista" fitHeight="50.0" fitWidth="65.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/trophy.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="Conquistas">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox fx:id="btnRegistar" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="296.0" prefWidth="423.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgRegistar" fitHeight="119.0" fitWidth="125.0" onMouseClicked="#abrirRegisto" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/greenplus.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelRegistar" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Adicionar Registo" textFill="#333333" visible="false">
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+         <top>
+            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="149.0" prefWidth="323.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="107.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Título.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D minX="1000.0" minY="500.0" width="1000.0" />
+                     </viewport>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </top>
+      </BorderPane>
+      <VBox fx:id="sideMenu" alignment="CENTER" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="190.0" prefWidth="190.0" style="-fx-background-color: #D8F5F2; -fx-border-width: 0 0 0 2; -fx-border-color: #cccccc;" visible="false" StackPane.alignment="CENTER_RIGHT">
          <children>
-            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
+            <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="imgCalendario" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#abrirCalendario" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/Calendário.png" />
+                        <Image url="@../resources/setting.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Calendário" textFill="#37474f">
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="120.0" text="Definições" textFill="#37474f">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
                </children>
-            </VBox>
-            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="imgAutocuidado" fitHeight="65.0" fitWidth="65.0" onMouseClicked="#abrirSaude" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/Autocuidados.png" />
+                        <Image url="@../resources/user.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Saúde" textFill="#37474f">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#hoverButton" onMouseExited="#sairHoverButton" prefHeight="100.0" prefWidth="72.0" style="-fx-background-color: transparent;" text="Conta" textFill="#37474f" HBox.hgrow="ALWAYS">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font size="18.0" />
                      </font>
-                  </Label>
+                  </Button>
                </children>
-            </VBox>
-            <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0">
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="imgEstatisticas" fitHeight="65.0" fitWidth="65.0" nodeOrientation="INHERIT" onMouseClicked="#abrirStats" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/Estatística.png" />
+                        <Image url="@../resources/night-mode.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Estatísticas" textFill="#37474f">
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#hoverButton" onMouseExited="#sairHoverButton" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="Modo Escuro" textFill="#37474f" HBox.hgrow="ALWAYS">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font size="18.0" />
                      </font>
-                  </Label>
+                  </Button>
                </children>
-            </VBox>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/question.png" />
+                     </image>
+                  </ImageView>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#hoverButton" onMouseExited="#sairHoverButton" prefHeight="91.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="Ajuda" textFill="#37474f" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/information.png" />
+                     </image>
+                  </ImageView>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#hoverButton" onMouseExited="#sairHoverButton" prefHeight="96.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="Sobre" textFill="#37474f" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="5.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/logout.png" />
+                     </image>
+                  </ImageView>
+                  <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseEntered="#hoverButton" onMouseExited="#sairHoverButton" prefHeight="40.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Logout" textFill="#37474f" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-   </bottom>
-   <center>
-      <VBox fx:id="btnRegistar" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="296.0" prefWidth="423.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fx:id="imgRegistar" fitHeight="119.0" fitWidth="125.0" onMouseClicked="#abrirRegisto" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/greenplus.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="labelRegistar" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Adicionar Registo" textFill="#333333" visible="false">
-               <VBox.margin>
-                  <Insets top="-5.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="50.0" />
-         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
       </VBox>
-   </center>
-   <top>
-      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="141.0" prefWidth="323.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="107.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/Título.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D minX="1000.0" minY="500.0" width="1000.0" />
-               </viewport>
-            </ImageView>
-         </children>
-      </StackPane>
-   </top>
-</BorderPane>
+      <ImageView fx:id="toggleSidebarArrow" fitHeight="150.0" fitWidth="45.0" onMouseClicked="#toggleSidebar" opacity="0.9" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+         <image>
+            <Image url="@../resources/left-arrow.png" />
+         </image>
+         <StackPane.margin>
+            <Insets right="5.0" />
+         </StackPane.margin>
+      </ImageView>
+   </children>
+</StackPane>
