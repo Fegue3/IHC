@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="535.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.MainMenuController">
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="535.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mindspace.controller.MainMenuController">
    <children>
       <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="323.0" style="-fx-background-color: EFF7FB;" stylesheets="@../style/mindspace.css">
          <bottom>
@@ -62,23 +62,6 @@
                            </VBox.margin>
                         </Label>
                      </children>
-                  </VBox>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
-                     <children>
-                        <ImageView fx:id="imgConquista" fitHeight="50.0" fitWidth="65.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/trophy.png" />
-                           </image>
-                        </ImageView>
-                        <Label text="Conquistas">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
                   </VBox>
                </children>
             </HBox>
