@@ -58,8 +58,7 @@ MindSpace follows the **MVC pattern**, separating logic (Controllers), structure
 * **Login.fxml**, **RegisterLogin.fxml**, **RegisterView\.fxml**
 * Controllers: `LoginController.java`, `RegisterLoginController.java`
 * Authenticates users and stores new accounts in MongoDB.
-* Screenshot:
-  <img width="400" height="619" alt="login" src="https://github.com/user-attachments/assets/2ce5d08e-f65c-4ac9-b06d-06c47d9d473d" />
+* Screenshot:<img width="400" height="619" alt="login" src="https://github.com/user-attachments/assets/2ce5d08e-f65c-4ac9-b06d-06c47d9d473d" />
 
 
 ### 🏠 Main Menu
@@ -67,8 +66,7 @@ MindSpace follows the **MVC pattern**, separating logic (Controllers), structure
 * **MainMenu.fxml**
 * Controller: `MainMenuController.java`
 * Central navigation hub to access all sections.
-* Screenshot:
-  <img width="397" height="664" alt="mainmenu" src="https://github.com/user-attachments/assets/cbb09866-0196-4509-878e-067569229702" />
+* Screenshot:<img width="397" height="664" alt="mainmenu" src="https://github.com/user-attachments/assets/cbb09866-0196-4509-878e-067569229702" />
 
 
 ### 📊 Statistics
@@ -76,8 +74,7 @@ MindSpace follows the **MVC pattern**, separating logic (Controllers), structure
 * **Stats.fxml**
 * Controller: `StatsController.java`
 * Displays mood trends, averages, activity logs using charts.
-* Screenshot:
-<img width="553" height="752" alt="statsº" src="https://github.com/user-attachments/assets/e53e5025-ab53-4183-b92c-bcee8a8a9d26" />
+* Screenshot:<img width="553" height="752" alt="statsº" src="https://github.com/user-attachments/assets/e53e5025-ab53-4183-b92c-bcee8a8a9d26" />
 
 
 ### 📅 Calendar & Journal
